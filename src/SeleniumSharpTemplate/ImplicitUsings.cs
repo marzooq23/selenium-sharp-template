@@ -1,0 +1,12 @@
+﻿global using OpenQA.Selenium.Chrome;
+global using OpenQA.Selenium.Edge;
+global using SeleniumSharpTemplate.WebDrivers.Abstract;
+global using SeleniumSharpTemplate.WebDrivers.Enum;
+global using SeleniumSharpTemplate.WebDrivers.Factory;
+global using SeleniumSharpTemplate.WebDrivers.Initializer.Chrome;
+global using SeleniumSharpTemplate.WebDrivers.Initializer.Edge;
+global using SeleniumSharpTemplate.WebDrivers.Interface;
+global using SeleniumSharpTemplate.WebDrivers.Options.Chrome;
+global using SeleniumSharpTemplate.WebDrivers.Options.Edge;
+global using SeleniumSharpTemplate.WebDrivers.ServiceCreator.Chrome;
+global using SeleniumSharpTemplate.WebDrivers.ServiceCreator.Edge;
