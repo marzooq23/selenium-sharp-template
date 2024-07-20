@@ -1,6 +1,4 @@
-﻿using SeleniumSharpTemplate.WebDrivers.Initializer.InternetExplorer;
-
-namespace SeleniumSharpTemplate.WebDrivers.Factory
+﻿namespace SeleniumSharpTemplate.WebDrivers.Factory
 {
     public static class WebDriverFactory
     {

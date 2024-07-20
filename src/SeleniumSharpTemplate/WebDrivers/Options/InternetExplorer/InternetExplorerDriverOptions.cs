@@ -2,7 +2,7 @@
 {
     public static class InternetExplorerDriverOptions
     {
-        const string EDGE_BIN = @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe";
+        private const string EDGE_BIN = @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe";
 
         public static InternetExplorerOptions Options => new()
         {
@@ -11,15 +11,16 @@
             BrowserCommandLineArguments = "-private",
         };
 
-        public static InternetExplorerOptions HeadlessOptions => GetInternetExplorerHeadlessOptions();
-
-        private static InternetExplorerOptions GetInternetExplorerHeadlessOptions()
+        public static InternetExplorerOptions HeadlessOptions
         {
-            InternetExplorerOptions ieHeadlessOptions = Options;
+            get
+            {
+                InternetExplorerOptions ieHeadlessOptions = Options;
 
-            ieHeadlessOptions.AddAdditionalOption("headless", true);
+                ieHeadlessOptions.AddAdditionalOption("headless", true);
 
-            return ieHeadlessOptions;
+                return ieHeadlessOptions;
+            }
         }
     }
 }

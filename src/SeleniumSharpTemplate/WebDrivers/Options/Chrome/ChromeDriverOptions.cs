@@ -10,30 +10,32 @@
             "--ignore-certificate-errors"
         ];
 
-        public static ChromeOptions Options => GetChromeOptions();
-
-        public static ChromeOptions HeadlessOptions => GetHeadlessChromeOptions();
-
-        private static ChromeOptions GetChromeOptions()
+        public static ChromeOptions Options
         {
-            ChromeOptions chromeOptions = new()
+            get
             {
-                LeaveBrowserRunning = false,
-                AcceptInsecureCertificates = true
-            };
+                ChromeOptions chromeOptions = new()
+                {
+                    LeaveBrowserRunning = false,
+                    AcceptInsecureCertificates = true
+                };
 
-            chromeOptions.AddArguments(AdditionalArguments);
+                chromeOptions.AddArguments(AdditionalArguments);
 
-            return chromeOptions;
+                return chromeOptions;
+            }
         }
 
-        private static ChromeOptions GetHeadlessChromeOptions()
+        public static ChromeOptions HeadlessOptions
         {
-            ChromeOptions chromeHeadlessOptions = GetChromeOptions();
+            get
+            {
+                ChromeOptions chromeHeadlessOptions = Options;
 
-            chromeHeadlessOptions.AddArguments("-headless");
+                chromeHeadlessOptions.AddArguments("-headless");
 
-            return chromeHeadlessOptions;
+                return chromeHeadlessOptions;
+            }
         }
     }
 }

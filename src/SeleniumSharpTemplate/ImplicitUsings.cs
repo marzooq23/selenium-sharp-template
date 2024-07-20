@@ -8,6 +8,7 @@ global using SeleniumSharpTemplate.WebDrivers.Factory;
 global using SeleniumSharpTemplate.WebDrivers.Initializer.Chrome;
 global using SeleniumSharpTemplate.WebDrivers.Initializer.Edge;
 global using SeleniumSharpTemplate.WebDrivers.Initializer.Firefox;
+global using SeleniumSharpTemplate.WebDrivers.Initializer.InternetExplorer;
 global using SeleniumSharpTemplate.WebDrivers.Interface;
 global using SeleniumSharpTemplate.WebDrivers.Options.Chrome;
 global using SeleniumSharpTemplate.WebDrivers.Options.Edge;

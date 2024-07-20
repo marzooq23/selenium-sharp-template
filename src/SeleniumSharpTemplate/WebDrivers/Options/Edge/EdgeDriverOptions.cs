@@ -10,30 +10,32 @@
             "--ignore-certificate-errors"
         ];
 
-        public static EdgeOptions Options => GetEdgeOptions();
-
-        public static EdgeOptions HeadlessOptions => GetEdgeHeadlessOptions();
-
-        private static EdgeOptions GetEdgeOptions()
+        public static EdgeOptions Options
         {
-            EdgeOptions edgeOptions = new()
+            get
             {
-                LeaveBrowserRunning = false,
-                AcceptInsecureCertificates = true
-            };
+                EdgeOptions edgeOptions = new()
+                {
+                    LeaveBrowserRunning = false,
+                    AcceptInsecureCertificates = true
+                };
 
-            edgeOptions.AddArguments(AdditionalArguments);
+                edgeOptions.AddArguments(AdditionalArguments);
 
-            return edgeOptions;
+                return edgeOptions;
+            }
         }
 
-        private static EdgeOptions GetEdgeHeadlessOptions()
+        public static EdgeOptions HeadlessOptions
         {
-            EdgeOptions edgeHeadlessOptions = GetEdgeOptions();
+            get
+            {
+                EdgeOptions edgeHeadlessOptions = Options;
 
-            edgeHeadlessOptions.AddArgument("-headless");
+                edgeHeadlessOptions.AddArgument("-headless");
 
-            return edgeHeadlessOptions;
+                return edgeHeadlessOptions;
+            }
         }
     }
 }

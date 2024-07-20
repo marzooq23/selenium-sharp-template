@@ -10,29 +10,31 @@
             "--ignore-certificate-errors"
         ];
 
-        public static FirefoxOptions Options => GetFirefoxOptions();
-
-        public static FirefoxOptions HeadlessOptions => GetFirefoxHeadlessOptions();
-
-        private static FirefoxOptions GetFirefoxOptions()
+        public static FirefoxOptions Options
         {
-            FirefoxOptions firefoxOptions = new()
+            get
             {
-                AcceptInsecureCertificates = true
-            };
+                FirefoxOptions firefoxOptions = new()
+                {
+                    AcceptInsecureCertificates = true
+                };
 
-            firefoxOptions.AddArguments(AdditionalArguments);
+                firefoxOptions.AddArguments(AdditionalArguments);
 
-            return firefoxOptions;
+                return firefoxOptions;
+            }
         }
 
-        private static FirefoxOptions GetFirefoxHeadlessOptions()
+        public static FirefoxOptions HeadlessOptions
         {
-            FirefoxOptions firefoxHeadlessOptions = GetFirefoxOptions();
+            get
+            {
+                FirefoxOptions firefoxHeadlessOptions = Options;
 
-            firefoxHeadlessOptions.AddArgument("-headless");
+                firefoxHeadlessOptions.AddArgument("-headless");
 
-            return firefoxHeadlessOptions;
+                return firefoxHeadlessOptions;
+            }
         }
     }
 }
