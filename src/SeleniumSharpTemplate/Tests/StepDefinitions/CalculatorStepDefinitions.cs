@@ -6,7 +6,7 @@
         [Given("I launch google calculator")]
         public void GivenILaunchGoogleCalculator()
         {
-            var driver = WebDriverFactory.CreateWebDriver(BrowserType.Chrome);
+            var driver = WebDriverFactory.CreateWebDriver(BrowserType.ChromeHeadless);
             driver.Navigate().GoToUrl("https://www.google.com/search?q=calculator");
             driver.Quit();
         }

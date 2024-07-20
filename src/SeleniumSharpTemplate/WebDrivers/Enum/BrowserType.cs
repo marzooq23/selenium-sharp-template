@@ -2,7 +2,13 @@
 {
     public enum BrowserType
     {
-        Chrome,
-        Edge
+        Chrome = 0,
+        ChromeHeadless,
+        Edge,
+        EdgeHeadless,
+        Firefox,
+        FirefoxHeadless,
+        InternetExplorer,
+        InternetExplorerHeadless
     }
 }
