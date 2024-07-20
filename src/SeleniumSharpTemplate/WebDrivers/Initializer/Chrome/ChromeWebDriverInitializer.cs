@@ -4,5 +4,8 @@
     {
         public override IWebDriver InitializeDriver() =>
             new ChromeDriver(ChromeDriverServiceCreator.Service, ChromeDriverOptions.Options);
+
+        public override IWebDriver InitializeHeadlessDriver() =>
+            new ChromeDriver(ChromeDriverServiceCreator.Service, ChromeDriverOptions.HeadlessOptions);
     }
 }

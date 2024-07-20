@@ -3,5 +3,6 @@
     public interface IWebDriverInitializer
     {
         IWebDriver InitializeDriver();
+        IWebDriver InitializeHeadlessDriver();
     }
 }

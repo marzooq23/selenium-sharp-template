@@ -2,9 +2,7 @@
 {
     public static class ChromeDriverOptions
     {
-        public static ChromeOptions Options => GetChromeOptions();
-
-        private static readonly string[] Arguments =
+        private static readonly string[] AdditionalArguments =
         [
             "--test-type",
             "--incognito",
@@ -12,8 +10,11 @@
             "--ignore-certificate-errors"
         ];
 
-        private static ChromeOptions GetChromeOptions()
+        public static ChromeOptions Options => GetChromeOptions();
 
+        public static ChromeOptions HeadlessOptions => GetHeadlessChromeOptions();
+
+        private static ChromeOptions GetChromeOptions()
         {
             ChromeOptions chromeOptions = new()
             {
@@ -21,9 +22,18 @@
                 AcceptInsecureCertificates = true
             };
 
-            chromeOptions.AddArguments(Arguments);
+            chromeOptions.AddArguments(AdditionalArguments);
 
             return chromeOptions;
+        }
+
+        private static ChromeOptions GetHeadlessChromeOptions()
+        {
+            ChromeOptions chromeHeadlessOptions = GetChromeOptions();
+
+            chromeHeadlessOptions.AddArguments("-headless");
+
+            return chromeHeadlessOptions;
         }
     }
 }

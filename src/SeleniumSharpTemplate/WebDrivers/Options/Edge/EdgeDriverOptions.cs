@@ -2,18 +2,19 @@
 {
     public static class EdgeDriverOptions
     {
-        public static EdgeOptions Options => GetEdgeOptions();
-
-        private static readonly string[] Arguments =
+        private static readonly string[] AdditionalArguments =
         [
             "--test-type",
-            "--incognito",
+            "--inprivate",
             "--start-maximized",
             "--ignore-certificate-errors"
         ];
 
-        private static EdgeOptions GetEdgeOptions()
+        public static EdgeOptions Options => GetEdgeOptions();
 
+        public static EdgeOptions HeadlessOptions => GetEdgeHeadlessOptions();
+
+        private static EdgeOptions GetEdgeOptions()
         {
             EdgeOptions edgeOptions = new()
             {
@@ -21,9 +22,18 @@
                 AcceptInsecureCertificates = true
             };
 
-            edgeOptions.AddArguments(Arguments);
+            edgeOptions.AddArguments(AdditionalArguments);
 
             return edgeOptions;
+        }
+
+        private static EdgeOptions GetEdgeHeadlessOptions()
+        {
+            EdgeOptions edgeHeadlessOptions = GetEdgeOptions();
+
+            edgeHeadlessOptions.AddArgument("-headless");
+
+            return edgeHeadlessOptions;
         }
     }
 }
