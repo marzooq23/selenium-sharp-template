@@ -1,7 +1,9 @@
-﻿global using OpenQA.Selenium.Chrome;
+﻿global using BoDi;
+global using OpenQA.Selenium.Chrome;
 global using OpenQA.Selenium.Edge;
 global using OpenQA.Selenium.Firefox;
 global using OpenQA.Selenium.IE;
+global using SeleniumSharpTemplate.Tests.Pages;
 global using SeleniumSharpTemplate.WebDrivers.Abstract;
 global using SeleniumSharpTemplate.WebDrivers.Enum;
 global using SeleniumSharpTemplate.WebDrivers.Factory;
@@ -18,3 +20,5 @@ global using SeleniumSharpTemplate.WebDrivers.ServiceCreator.Chrome;
 global using SeleniumSharpTemplate.WebDrivers.ServiceCreator.Edge;
 global using SeleniumSharpTemplate.WebDrivers.ServiceCreator.Firefox;
 global using SeleniumSharpTemplate.WebDrivers.ServiceCreator.InternetExplorer;
+global using System.Diagnostics;
+global using System.Text.Json;
