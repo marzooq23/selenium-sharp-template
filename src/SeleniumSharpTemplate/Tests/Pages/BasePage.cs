@@ -4,6 +4,12 @@
     {
         public readonly IWebDriver driver = driver ?? throw new ArgumentNullException(nameof(driver));
 
+        public void WaitUntilTitleContains(string title)
+        {
+            WebDriverWait webDriverWait = new(driver, TimeSpan.FromSeconds(10));
+            webDriverWait.Until(ExpectedConditions.TitleContains(title));
+        }
+
         public void GoToUrl(string url)
         {
             try
@@ -27,16 +33,5 @@
                 throw;
             }
         }
-
-        public string GetPageTitle
-        {
-            get
-            {
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                return driver.Title;
-            }
-        }
-
-        public void SendKeys(By by, string value) => driver.FindElement(by).SendKeys(value);
     }
 }

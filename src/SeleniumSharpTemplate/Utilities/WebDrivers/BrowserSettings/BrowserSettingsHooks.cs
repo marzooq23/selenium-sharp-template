@@ -4,11 +4,18 @@
     [DebuggerStepThrough]
     public static class BrowserSettingsHooks
     {
+        private const string BROWSERSETTINGS_SECTION = "BrowserSettings";
+        private const string BROWSERSETTINGS_JSON_FILENAME = "BrowserSettings.json";
+        private static string GetBrowserSettingsLocation => Directories.GetBinLocation + "Utilities\\WebDrivers\\BrowserSettings\\";
+
         [BeforeTestRun]
         public static void RegisterBrowserSettings(IObjectContainer objectContainer)
         {
             BrowserSettings? browsersSettings =
-                ConfigurationFactory.Create<BrowserSettings>("BrowserSettings.json");
+                ConfigurationFactory
+                .GetBinding<BrowserSettings>(
+                    GetBrowserSettingsLocation + BROWSERSETTINGS_JSON_FILENAME,
+                    BROWSERSETTINGS_SECTION);
 
             if (browsersSettings != null)
             {

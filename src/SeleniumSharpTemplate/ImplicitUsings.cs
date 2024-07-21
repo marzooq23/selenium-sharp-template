@@ -1,11 +1,14 @@
 ﻿global using BoDi;
 global using FluentAssertions;
+global using Microsoft.Extensions.Configuration;
 global using OpenQA.Selenium.Chrome;
 global using OpenQA.Selenium.Edge;
 global using OpenQA.Selenium.Firefox;
 global using OpenQA.Selenium.IE;
+global using OpenQA.Selenium.Support.UI;
 global using SeleniumSharpTemplate.Tests.Pages;
 global using SeleniumSharpTemplate.Utilities.Configuration;
+global using SeleniumSharpTemplate.Utilities.Paths;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Enum;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Factory;

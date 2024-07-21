@@ -1,4 +1,6 @@
 {
-  "CrossBrowserTesting": true,
-  "EdgeBin": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+  "BrowserSettings": {
+    "CrossBrowserTesting": true,
+    "EdgeBin": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+  }
 }

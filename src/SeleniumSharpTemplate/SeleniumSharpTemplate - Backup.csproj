@@ -36,7 +36,7 @@
 		<TreatAsUsed>true</TreatAsUsed>
 	  </PackageReference>
 	  <PackageReference Include="Selenium.WebDriver" Version="4.23.0">
-		<TreatAsUsed>true</TreatAsUsed>
+	    <TreatAsUsed>true</TreatAsUsed>
 	  </PackageReference>
 	  <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
   </ItemGroup>
@@ -49,6 +49,37 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Tests\Config\Config.Debug.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>Config.json</DependentUpon>
+    </None>
+    <None Update="Tests\Config\Config.Dev.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>Config.json</DependentUpon>
+    </None>
+    <None Update="Tests\Config\Config.json">
+      <TransformOnBuild>true</TransformOnBuild>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Tests\Config\Config.Release.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>Config.json</DependentUpon>
+    </None>
+    <None Update="Tests\Config\Config.Staging.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>Config.json</DependentUpon>
+    </None>
+    <None Update="Tests\Config\Config.Test.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>Config.json</DependentUpon>
+    </None>
+    <None Update="Tests\Config\Config.Uat.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>Config.json</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <!--<ItemGroup>
 	<None Update="Tests\Config\Config.Debug.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
@@ -59,7 +90,6 @@
 	</None>
 	<None Update="Tests\Config\Config.json">
 	  <TransformOnBuild>true</TransformOnBuild>
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</None>
 	<None Update="Tests\Config\Config.Release.json">
 	  <IsTransformFile>true</IsTransformFile>
@@ -87,7 +117,6 @@
 	</None>
 	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.json">
 	  <TransformOnBuild>true</TransformOnBuild>
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</None>
 	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Release.json">
 	  <IsTransformFile>true</IsTransformFile>
@@ -105,6 +134,15 @@
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>
-  </ItemGroup>
+  </ItemGroup>-->
+	
+  <!--<Target Name="Copy Json" AfterTargets="Build">
+	  <ItemGroup>
+		  <ConfigDir Include="Tests\Config\Config*.json" />
+		  <BrowserSettingsDir Include="Utilities\WebDrivers\BrowserSettings\BrowserSettings*.json" />
+	  </ItemGroup>
+	  <Copy SourceFiles="@(ConfigDir)" DestinationFiles="$(OutDir)\%(RecursiveDir)%(Filename)%(Extension)" />
+	  <Copy SourceFiles="@(BrowserSettingsDir)" DestinationFiles="$(OutDir)\%(RecursiveDir)%(Filename)%(Extension)" />
+  </Target>-->
 
 </Project>
