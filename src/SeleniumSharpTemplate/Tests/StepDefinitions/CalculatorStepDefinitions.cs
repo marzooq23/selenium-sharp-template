@@ -7,6 +7,7 @@
         public void GivenILaunchGoogleCalculator()
         {
             calculatorPage.GoToGoogle();
+            calculatorPage.GetPageTitle.Should().StartWith("calculator");
         }
     }
 }
