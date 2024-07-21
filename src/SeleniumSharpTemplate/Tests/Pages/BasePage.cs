@@ -27,5 +27,7 @@
                 throw;
             }
         }
+
+        public string GetPageTitle => driver.Title;
     }
 }

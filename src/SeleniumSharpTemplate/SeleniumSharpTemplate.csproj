@@ -31,5 +31,9 @@
 	  <Using Include="OpenQA.Selenium" />
 	  <Using Include="TechTalk.SpecFlow" />
   </ItemGroup>
+	
+  <Target Name="Copy BrowserSettings" AfterTargets="Build">
+	  <Copy SourceFiles="WebDrivers\BrowserSettings\BrowserSettings.json" DestinationFiles="$(OutDir)BrowserSettings.json" />
+  </Target>
 
 </Project>

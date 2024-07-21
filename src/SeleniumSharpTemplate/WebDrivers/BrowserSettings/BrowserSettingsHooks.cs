@@ -4,12 +4,24 @@
     [DebuggerStepThrough]
     public static class BrowserSettingsHooks
     {
+        [BeforeTestRun]
+        public static void RegisterBrowserSettings(IObjectContainer objectContainer)
+        {
+            BrowsersSettings? browsersSettings = ConfigurationFactory.Create<BrowsersSettings>("BrowserSettings.json");
+
+            if (browsersSettings != null)
+            {
+                objectContainer.RegisterInstanceAs(browsersSettings);
+                BrowsersSettings.RegisterBrowsersSettingsInstance(browsersSettings);
+            }
+        }
+
         [BeforeScenario]
         public static void RegisterDriver(IObjectContainer objectContainer)
         {
             if (objectContainer.IsRegistered<IWebDriver>()) return;
 
-            var driver = WebDriverFactory.CreateWebDriver(BrowserType.Chrome);
+            IWebDriver driver = WebDriverFactory.CreateWebDriver(BrowserType.Chrome);
             objectContainer.RegisterInstanceAs(driver);
         }
 
