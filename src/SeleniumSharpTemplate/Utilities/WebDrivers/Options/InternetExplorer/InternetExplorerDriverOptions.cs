@@ -2,12 +2,10 @@
 {
     public static class InternetExplorerDriverOptions
     {
-        private const string EDGE_BIN = @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe";
-
         public static InternetExplorerOptions Options => new()
         {
             AttachToEdgeChrome = true,
-            EdgeExecutablePath = EDGE_BIN,
+            EdgeExecutablePath = BrowserSettings.BrowserSettings.GetBrowsersSettings().EdgeBin,
             BrowserCommandLineArguments = "-private",
         };
 

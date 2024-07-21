@@ -1,16 +1,17 @@
 ﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.CrossBrowserTestFixture
 {
     [TestFixture]
+    [Parallelizable]
     public class CrossBrowserTestFixture()
     {
         private IWebDriver? driver;
-        private CalculatorPage? _calculatorPage;
+        private GoogleHomePage? _googleHomePage;
         private bool _isCrossBrowserTestingEnabled;
 
         [SetUp]
         public void SetUp()
         {
-            _isCrossBrowserTestingEnabled = BrowsersSettings.GetBrowsersSettings().CrossBrowserTesting;
+            _isCrossBrowserTestingEnabled = BrowserSettings.BrowserSettings.GetBrowsersSettings().CrossBrowserTesting;
         }
 
         [Test]
@@ -27,15 +28,14 @@
 
         public void TestGoogleCalculator()
         {
-            _calculatorPage = new CalculatorPage(driver!);
-            _calculatorPage.GoToGoogle();
-            _calculatorPage.GetPageTitle.Should().StartWith("calculator");
+            _googleHomePage = new GoogleHomePage(driver!);
+            const string searchText = "calculator";
+            _googleHomePage.GoToGoogle();
+            _googleHomePage.Search(searchText);
+            _googleHomePage.GetPageTitle.Should().StartWith(searchText);
         }
 
         [TearDown]
-        public void TearDown()
-        {
-            driver!.Close();
-        }
+        public void TearDown() => driver!.Close();
     }
 }

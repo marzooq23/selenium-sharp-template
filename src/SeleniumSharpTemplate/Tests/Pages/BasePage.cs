@@ -28,6 +28,15 @@
             }
         }
 
-        public string GetPageTitle => driver.Title;
+        public string GetPageTitle
+        {
+            get
+            {
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                return driver.Title;
+            }
+        }
+
+        public void SendKeys(By by, string value) => driver.FindElement(by).SendKeys(value);
     }
 }

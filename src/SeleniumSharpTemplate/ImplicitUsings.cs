@@ -7,7 +7,6 @@ global using OpenQA.Selenium.IE;
 global using SeleniumSharpTemplate.Tests.Pages;
 global using SeleniumSharpTemplate.Utilities.Configuration;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
-global using SeleniumSharpTemplate.Utilities.WebDrivers.BrowserSettings;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Enum;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Factory;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Chrome;
