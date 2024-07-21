@@ -1,7 +1,6 @@
 ﻿namespace SeleniumSharpTemplate.Tests.Pages
 {
-    public class CalculatorPage(IWebDriver driver) : BasePage(driver)
+    public class CalculatorPage
     {
-        public void GoToGoogle() => GoToUrl("https://www.google.com/search?q=calculator");
     }
 }

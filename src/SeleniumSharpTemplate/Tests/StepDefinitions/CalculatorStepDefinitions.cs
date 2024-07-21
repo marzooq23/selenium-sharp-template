@@ -1,12 +1,14 @@
 ﻿namespace SeleniumSharpTemplate.Tests.StepDefinitions
 {
     [Binding]
-    public sealed class CalculatorStepDefinitions(CalculatorPage calculatorPage)
+    public sealed class CalculatorStepDefinitions
     {
         [Given("I launch google calculator")]
         public void GivenILaunchGoogleCalculator()
         {
-            calculatorPage.GoToGoogle();
+            var driver = WebDriverFactory.CreateWebDriver(BrowserType.ChromeHeadless);
+            driver.Navigate().GoToUrl("https://www.google.com/search?q=calculator");
+            driver.Quit();
         }
     }
 }

@@ -33,7 +33,7 @@
   </ItemGroup>
 	
   <Target Name="Copy BrowserSettings" AfterTargets="Build">
-	  <Copy SourceFiles="WebDrivers\BrowserSettings\BrowserSettings.json" DestinationFiles="$(OutDir)BrowserSettings.json" />
+	  <Copy SourceFiles="Utilities\WebDrivers\BrowserSettings\BrowserSettings.json" DestinationFiles="$(OutDir)BrowserSettings.json" />
   </Target>
 
 </Project>
