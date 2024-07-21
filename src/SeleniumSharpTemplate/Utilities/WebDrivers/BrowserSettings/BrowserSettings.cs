@@ -11,6 +11,7 @@
         public static void RegisterBrowsersSettingsInstance(BrowserSettings browsersSettings) =>
             instance = browsersSettings;
 
-        public static BrowserSettings GetBrowsersSettings() => instance ?? throw new NullReferenceException("Please configure BrowsersSettings");
+        public static BrowserSettings GetBrowsersSettings() =>
+            instance ?? throw new NullReferenceException("Please configure BrowserSettings");
     }
 }

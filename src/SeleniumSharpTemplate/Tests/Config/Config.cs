@@ -6,9 +6,9 @@
 
         public string? UrlGoogle { get; set; }
 
-        public static void RegisterConfigInstance(Config config) =>
-            instance = config;
+        public static void RegisterConfigInstance(Config config) => instance = config;
 
-        public static Config GetConfig() => instance ?? throw new NullReferenceException("Please configure Configs");
+        public static Config GetConfig() =>
+            instance ?? throw new NullReferenceException("Please configure Config");
     }
 }
