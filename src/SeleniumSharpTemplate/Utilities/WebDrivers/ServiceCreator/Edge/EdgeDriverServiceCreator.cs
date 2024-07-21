@@ -2,21 +2,24 @@
 {
     public static class EdgeDriverServiceCreator
     {
+        private const string DRIVER_FOLDER_NAME = "Drivers";
+        private const string SE_CACHE_PATH = "SE_CACHE_PATH";
         private static string GetBinaryLocation => AppDomain.CurrentDomain.BaseDirectory;
 
-        public static EdgeDriverService Service => CreateEdgeDriverService();
-
-        public static EdgeDriverService CreateEdgeDriverService()
+        public static EdgeDriverService Service
         {
-            DirectoryInfo driverPath = new($"{Path.Combine(GetBinaryLocation, "Drivers")}");
-            if (!driverPath.Exists) driverPath.Create();
+            get
+            {
+                DirectoryInfo driverPath = new($"{Path.Combine(GetBinaryLocation, DRIVER_FOLDER_NAME)}");
+                if (!driverPath.Exists) driverPath.Create();
 
-            Environment.SetEnvironmentVariable("SE_CACHE_PATH", driverPath.ToString());
+                Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());
 
-            EdgeDriverService service = EdgeDriverService.CreateDefaultService();
-            service.Start();
+                EdgeDriverService service = EdgeDriverService.CreateDefaultService();
+                service.Start();
 
-            return service;
+                return service;
+            }
         }
     }
 }

@@ -1,14 +1,16 @@
 ﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.BrowserSettings
 {
-    public class BrowsersSettings
+    public class BrowserSettings
     {
-        private static BrowsersSettings? instance;
+        private static BrowserSettings? instance;
 
         public bool CrossBrowserTesting { get; set; }
 
-        public static void RegisterBrowsersSettingsInstance(BrowsersSettings browsersSettings) =>
+        public string? EdgeBin { get; set; }
+
+        public static void RegisterBrowsersSettingsInstance(BrowserSettings browsersSettings) =>
             instance = browsersSettings;
 
-        public static BrowsersSettings GetBrowsersSettings() => instance!;
+        public static BrowserSettings GetBrowsersSettings() => instance ?? throw new NullReferenceException("Please configure BrowsersSettings");
     }
 }

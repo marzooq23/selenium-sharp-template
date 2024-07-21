@@ -7,12 +7,17 @@
         [BeforeTestRun]
         public static void RegisterBrowserSettings(IObjectContainer objectContainer)
         {
-            BrowsersSettings? browsersSettings = ConfigurationFactory.Create<BrowsersSettings>("BrowserSettings.json");
+            BrowserSettings? browsersSettings =
+                ConfigurationFactory.Create<BrowserSettings>("BrowserSettings.json");
 
             if (browsersSettings != null)
             {
                 objectContainer.RegisterInstanceAs(browsersSettings);
-                BrowsersSettings.RegisterBrowsersSettingsInstance(browsersSettings);
+                BrowserSettings.RegisterBrowsersSettingsInstance(browsersSettings);
+            }
+            else
+            {
+                throw new NullReferenceException("Please configure BrowserSettings");
             }
         }
 
@@ -28,7 +33,8 @@
         [AfterScenario]
         public static void DisposeDriver(IObjectContainer objectContainer)
         {
-            if (objectContainer.IsRegistered<IWebDriver>()) objectContainer.Resolve<IWebDriver>().Dispose();
+            if (objectContainer.IsRegistered<IWebDriver>())
+                objectContainer.Resolve<IWebDriver>().Dispose();
         }
     }
 }

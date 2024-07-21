@@ -2,21 +2,24 @@
 {
     public static class FirefoxDriverServiceCreator
     {
+        private const string DRIVER_FOLDER_NAME = "Drivers";
+        private const string SE_CACHE_PATH = "SE_CACHE_PATH";
         private static string GetBinaryLocation => AppDomain.CurrentDomain.BaseDirectory;
 
-        public static FirefoxDriverService Service => CreateFirefoxDriverService();
-
-        public static FirefoxDriverService CreateFirefoxDriverService()
+        public static FirefoxDriverService Service
         {
-            DirectoryInfo driverPath = new($"{Path.Combine(GetBinaryLocation, "Drivers")}");
-            if (!driverPath.Exists) driverPath.Create();
+            get
+            {
+                DirectoryInfo driverPath = new($"{Path.Combine(GetBinaryLocation, DRIVER_FOLDER_NAME)}");
+                if (!driverPath.Exists) driverPath.Create();
 
-            Environment.SetEnvironmentVariable("SE_CACHE_PATH", driverPath.ToString());
+                Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());
 
-            FirefoxDriverService service = FirefoxDriverService.CreateDefaultService();
-            service.Start();
+                FirefoxDriverService service = FirefoxDriverService.CreateDefaultService();
+                service.Start();
 
-            return service;
+                return service;
+            }
         }
     }
 }
