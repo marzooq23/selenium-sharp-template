@@ -8,6 +8,7 @@
 	  <IsPackable>false</IsPackable>
 	  <IsTestProject>true</IsTestProject>
 	  <LangVersion>latest</LangVersion>
+	  <Configurations>Debug;Release;Dev;Test;Uat;Staging</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,30 +17,94 @@
 		<PrivateAssets>all</PrivateAssets>
 		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
+	  <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
 	  <PackageReference Include="FluentAssertions" Version="6.12.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+	  <PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="4.0.50">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
 	  <PackageReference Include="nunit" Version="4.1.0" />
 	  <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
 	  <PackageReference Include="Roslynator.Analyzers" Version="4.12.4">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
 	  <PackageReference Include="Selenium.Support" Version="4.23.0">
-	    <TreatAsUsed>true</TreatAsUsed>
+		<TreatAsUsed>true</TreatAsUsed>
 	  </PackageReference>
-	  <PackageReference Include="Selenium.WebDriver" Version="4.23.0" />
+	  <PackageReference Include="Selenium.WebDriver" Version="4.23.0">
+		<TreatAsUsed>true</TreatAsUsed>
+	  </PackageReference>
 	  <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
   </ItemGroup>
 
   <ItemGroup>
 	  <Using Include="NUnit.Framework" />
 	  <Using Include="OpenQA.Selenium" />
+	  <Using Include="SeleniumExtras.WaitHelpers" />
 	  <Using Include="TechTalk.SpecFlow" />
   </ItemGroup>
-	
-  <Target Name="Copy Json" AfterTargets="Build">
-	  <Copy SourceFiles="Tests\Config\Config.json" DestinationFiles="$(OutDir)Config.json" />
-	  <Copy SourceFiles="Utilities\WebDrivers\BrowserSettings\BrowserSettings.json" DestinationFiles="$(OutDir)BrowserSettings.json" />
-  </Target>
+
+  <ItemGroup>
+	<None Update="Tests\Config\Config.Debug.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>Config.json</DependentUpon>
+	</None>
+	<None Update="Tests\Config\Config.Dev.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>Config.json</DependentUpon>
+	</None>
+	<None Update="Tests\Config\Config.json">
+	  <TransformOnBuild>true</TransformOnBuild>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="Tests\Config\Config.Release.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>Config.json</DependentUpon>
+	</None>
+	<None Update="Tests\Config\Config.Staging.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>Config.json</DependentUpon>
+	</None>
+	<None Update="Tests\Config\Config.Test.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>Config.json</DependentUpon>
+	</None>
+	<None Update="Tests\Config\Config.Uat.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>Config.json</DependentUpon>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Debug.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>BrowserSettings.json</DependentUpon>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Dev.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>BrowserSettings.json</DependentUpon>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.json">
+	  <TransformOnBuild>true</TransformOnBuild>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Release.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>BrowserSettings.json</DependentUpon>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Staging.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>BrowserSettings.json</DependentUpon>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Test.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>BrowserSettings.json</DependentUpon>
+	</None>
+	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Uat.json">
+	  <IsTransformFile>true</IsTransformFile>
+	  <DependentUpon>BrowserSettings.json</DependentUpon>
+	</None>
+  </ItemGroup>
 
 </Project>
