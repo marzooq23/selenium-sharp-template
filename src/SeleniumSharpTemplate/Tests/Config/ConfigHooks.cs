@@ -12,7 +12,8 @@
         {
             Config? config = ConfigurationFactory
                 .GetBinding<Config>(
-                Path.Combine(PathFinder.Config, CONFIG_JSON_FILENAME),
+                Path
+                .Combine(PathFinder.Config, CONFIG_JSON_FILENAME),
                 CONFIG_SECTION);
 
             if (config != null)
