@@ -10,6 +10,7 @@
             googleHomePage.GoToGoogle();
             googleHomePage.Search(searchText);
             googleHomePage.GetPageTitle.Should().StartWith(searchText);
+            googleHomePage.driver.CaptureScreenshot($"Search result '{searchText}' verified");
         }
     }
 }

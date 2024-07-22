@@ -77,6 +77,9 @@
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
+	<None Update="Utilities\Executors\KillWebDrivers.bat">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
 	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Debug.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>

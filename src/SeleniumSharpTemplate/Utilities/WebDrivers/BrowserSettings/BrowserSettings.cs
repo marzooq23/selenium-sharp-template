@@ -9,7 +9,7 @@
         public string? EdgeBin { get; set; }
 
         public static void RegisterBrowsersSettingsInstance(BrowserSettings browsersSettings) =>
-            instance = browsersSettings;
+            instance = browsersSettings ?? throw new NullReferenceException("Please configure BrowserSettings");
 
         public static BrowserSettings GetBrowsersSettings() =>
             instance ?? throw new NullReferenceException("Please configure BrowserSettings");
