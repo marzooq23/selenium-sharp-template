@@ -9,7 +9,7 @@
         {
             get
             {
-                DirectoryInfo driverPath = new($"{Path.Combine(Directories.GetBinLocation, DRIVER_FOLDER_NAME)}");
+                DirectoryInfo driverPath = new($"{Path.Combine(PathFinder.Bin, DRIVER_FOLDER_NAME)}");
                 if (!driverPath.Exists) driverPath.Create();
 
                 Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());

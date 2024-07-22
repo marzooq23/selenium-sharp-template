@@ -6,14 +6,13 @@
     {
         private const string CONFIG_SECTION = "Config";
         private const string CONFIG_JSON_FILENAME = "Config.json";
-        private static string GetConfigLocation => Directories.GetBinLocation + "Tests\\Config\\";
 
         [BeforeTestRun]
         public static void RegisterConfig(IObjectContainer objectContainer)
         {
             Config? config = ConfigurationFactory
                 .GetBinding<Config>(
-                GetConfigLocation + CONFIG_JSON_FILENAME,
+                Path.Combine(PathFinder.Config, CONFIG_JSON_FILENAME),
                 CONFIG_SECTION);
 
             if (config != null)

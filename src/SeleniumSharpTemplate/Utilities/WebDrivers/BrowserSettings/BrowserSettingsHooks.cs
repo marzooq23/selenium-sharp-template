@@ -4,9 +4,9 @@
     [DebuggerStepThrough]
     public static class BrowserSettingsHooks
     {
+        private const string KILL_WEBDRIVERS_BAT = "KillWebDrivers.bat";
         private const string BROWSERSETTINGS_SECTION = "BrowserSettings";
         private const string BROWSERSETTINGS_JSON_FILENAME = "BrowserSettings.json";
-        private static string GetBrowserSettingsLocation => Directories.GetBinLocation + "Utilities\\WebDrivers\\BrowserSettings\\";
 
         [BeforeTestRun]
         public static void RegisterBrowserSettings(IObjectContainer objectContainer)
@@ -14,7 +14,7 @@
             BrowserSettings? browsersSettings =
                 ConfigurationFactory
                 .GetBinding<BrowserSettings>(
-                    GetBrowserSettingsLocation + BROWSERSETTINGS_JSON_FILENAME,
+                    Path.Combine(PathFinder.BrowserSettings, BROWSERSETTINGS_JSON_FILENAME),
                     BROWSERSETTINGS_SECTION);
 
             if (browsersSettings != null)
@@ -43,5 +43,8 @@
             if (objectContainer.IsRegistered<IWebDriver>())
                 objectContainer.Resolve<IWebDriver>().Dispose();
         }
+
+        [AfterTestRun]
+        public static void KillWebDrivers() => ProcessRunner.RunBatchFile(Path.Combine(PathFinder.KillWebDrivers, KILL_WEBDRIVERS_BAT), PathFinder.KillWebDrivers);
     }
 }
