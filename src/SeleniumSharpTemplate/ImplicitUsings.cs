@@ -1,5 +1,4 @@
 ﻿global using BoDi;
-global using FluentAssertions;
 global using Microsoft.Extensions.Configuration;
 global using OpenQA.Selenium.Chrome;
 global using OpenQA.Selenium.Edge;

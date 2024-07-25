@@ -15,33 +15,39 @@
 
         public static string Config => Path.Combine(Bin, CONFIG_DIRECTORY);
 
-        public static string BrowserSettings => Path.Combine(Bin, BROWSER_SETTINGS_DIRECTORY);
+        public static string BrowserSettings =>
+            Path.Combine(Bin, BROWSER_SETTINGS_DIRECTORY);
 
-        public static string KillWebDrivers => Path.Combine(Bin, EXECUTORS_DIRECTORY);
+        public static string KillWebDrivers =>
+            Path.Combine(Bin, EXECUTORS_DIRECTORY);
 
         public static string Root
         {
             get
             {
                 string root = Directory.GetCurrentDirectory();
-                while (!File.Exists(Path.Combine(root, GIT_IGNORE_FILE_NAME))) root = Path.GetFullPath(Path.Combine(root, "../"));
+                while (!File.Exists(Path.Combine(root, GIT_IGNORE_FILE_NAME)))
+                    root = Path.GetFullPath(Path.Combine(root, "../"));
+
                 return root;
             }
         }
 
         public static string Artefacts =>
-        Path.Combine(Root, ARTEFACTS_FOLDER_NAME)
-        .CreatePathIfNotExists();
+            Path.Combine(Root, ARTEFACTS_FOLDER_NAME)
+            .CreatePathIfNotExists();
 
         public static string Reports =>
-        Path.Combine(Artefacts, REPORTS_FOLDER_NAME)
-        .CreatePathIfNotExists();
+            Path.Combine(Artefacts, REPORTS_FOLDER_NAME)
+            .CreatePathIfNotExists();
 
         public static string Screenshots =>
-        Path.Combine(Reports, SREENSHOTS_FOLDER_NAME).CreatePathIfNotExists();
+            Path.Combine(Reports, SREENSHOTS_FOLDER_NAME)
+            .CreatePathIfNotExists();
 
         public static string Pdf =>
-        Path.Combine(Reports, PDF_FOLDER_NAME).CreatePathIfNotExists();
+            Path.Combine(Reports, PDF_FOLDER_NAME)
+            .CreatePathIfNotExists();
 
         public static string FeatureTitleScreenshots { get; set; } = string.Empty;
         public static string FeatureTitlePdf { get; set; } = string.Empty;

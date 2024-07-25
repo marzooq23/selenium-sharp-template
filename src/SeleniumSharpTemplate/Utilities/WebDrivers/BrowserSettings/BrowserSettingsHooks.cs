@@ -14,7 +14,9 @@
             BrowserSettings? browsersSettings =
                 ConfigurationFactory
                 .GetBinding<BrowserSettings>(
-                    Path.Combine(PathFinder.BrowserSettings, BROWSERSETTINGS_JSON_FILENAME),
+                    Path.Combine(
+                        PathFinder.BrowserSettings,
+                        BROWSERSETTINGS_JSON_FILENAME),
                     BROWSERSETTINGS_SECTION);
 
             if (browsersSettings != null)
@@ -45,6 +47,10 @@
         }
 
         [AfterTestRun]
-        public static void KillWebDrivers() => ProcessRunner.RunBatchFile(Path.Combine(PathFinder.KillWebDrivers, KILL_WEBDRIVERS_BAT), PathFinder.KillWebDrivers);
+        public static void KillWebDrivers() =>
+            ProcessRunner.RunBatchFile(
+                Path.Combine(
+                    PathFinder.KillWebDrivers, KILL_WEBDRIVERS_BAT),
+                PathFinder.KillWebDrivers);
     }
 }

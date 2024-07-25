@@ -9,7 +9,8 @@
             try
             {
                 var screenShot = Driver.TakeScreenshot();
-                string screenShotFileName = $"{FileName ?? Contexts.GetStepText}_{Guid.NewGuid()}.png";
+                string screenShotFileName =
+                    $"{FileName ?? Contexts.GetStepText}_{Guid.NewGuid()}.png";
                 imagePath = Path.Combine(
                     FilePath! ?? PathFinder.ScenarioTitleScreenshots,
                     screenShotFileName);

@@ -7,13 +7,17 @@
         [BeforeFeature]
         public static void CreatePdfFolderBeforeFeature(FeatureContext featureContext)
         {
-            PathFinder.FeatureTitlePdf = Path.Combine(PathFinder.Pdf, featureContext.FeatureInfo.Title).CreatePathIfNotExists();
+            PathFinder.FeatureTitlePdf =
+                Path.Combine(PathFinder.Pdf, featureContext.FeatureInfo.Title)
+                .CreatePathIfNotExists();
         }
 
         [BeforeScenario]
         public static void CreatePdfFolderBeforeScenario(ScenarioContext scenarioContext)
         {
-            PathFinder.ScenarioTitlePdf = Path.Combine(PathFinder.FeatureTitlePdf!, scenarioContext.ScenarioInfo.Title).CreatePathIfNotExists();
+            PathFinder.ScenarioTitlePdf =
+                Path.Combine(PathFinder.FeatureTitlePdf!, scenarioContext.ScenarioInfo.Title)
+                .CreatePathIfNotExists();
         }
     }
 }

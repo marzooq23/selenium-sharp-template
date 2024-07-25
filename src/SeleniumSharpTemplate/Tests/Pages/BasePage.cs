@@ -2,7 +2,8 @@
 {
     public class BasePage(IWebDriver driver)
     {
-        public readonly IWebDriver driver = driver ?? throw new ArgumentNullException(nameof(driver));
+        public readonly IWebDriver driver =
+            driver ?? throw new ArgumentNullException(nameof(driver));
 
         public void WaitUntilTitleContains(string title)
         {
