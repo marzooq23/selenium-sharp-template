@@ -2,6 +2,7 @@
 {
     public static class PathFinder
     {
+        private const string LOGS_FOLDER_NAME = "Logs";
         private const string REPORTS_FOLDER_NAME = "Reports";
         private const string GIT_IGNORE_FILE_NAME = ".gitignore";
         private const string ARTEFACTS_FOLDER_NAME = "Artefacts";
@@ -13,13 +14,15 @@
 
         public static string Bin => AppDomain.CurrentDomain.BaseDirectory;
 
-        public static string Config => Path.Combine(Bin, CONFIG_DIRECTORY);
-
         public static string BrowserSettings =>
             Path.Combine(Bin, BROWSER_SETTINGS_DIRECTORY);
 
+        public static string Config => Path.Combine(Bin, CONFIG_DIRECTORY);
+
         public static string KillWebDrivers =>
             Path.Combine(Bin, EXECUTORS_DIRECTORY);
+
+        public static string Logs => Path.Combine(Bin, LOGS_FOLDER_NAME);
 
         public static string Root
         {
