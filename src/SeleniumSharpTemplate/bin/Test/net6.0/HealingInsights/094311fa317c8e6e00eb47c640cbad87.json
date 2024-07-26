@@ -1,0 +1,144 @@
+[
+  {
+    "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+    "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+    "Name": "AutoWait-FindElement",
+    "WasSuccessful": true,
+    "Details": {
+      "MethodName": "AutoWait-FindElement",
+      "Locator": {
+        "Value": "[name='q']",
+        "Type": "By.CssSelector"
+      },
+      "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+      "ElapsedMilliseconds": 183,
+      "WasSuccessful": true,
+      "Exception": null,
+      "CreatedDate": "2024-07-26T16:26:42.6011145Z",
+      "ScreenShot": ""
+    },
+    "ChildSteps": [
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+        "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+        "Name": "AutoWait-ElementToBeClickable",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "AutoWait-ElementToBeClickable",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "NotAvailable",
+          "ElapsedMilliseconds": 53,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.470349Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      },
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+        "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+        "Name": "SelfHealing-SaveByClause",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "SelfHealing-SaveByClause",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+          "ElapsedMilliseconds": 129,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.6010259Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      }
+    ]
+  },
+  {
+    "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+    "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+    "Name": "LocatorOptimization",
+    "WasSuccessful": true,
+    "Details": {
+      "MethodName": "LocatorOptimization",
+      "Locator": {
+        "Value": "[name='q']",
+        "Type": "By.CssSelector"
+      },
+      "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+      "ElapsedMilliseconds": 68,
+      "WasSuccessful": true,
+      "Exception": null,
+      "CreatedDate": "2024-07-26T16:26:42.6718621Z",
+      "ScreenShot": ""
+    },
+    "ChildSteps": [
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+        "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+        "Name": "LocatorOptimization-XPath",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "LocatorOptimization-XPath",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+          "ElapsedMilliseconds": 14,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.6435172Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      },
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+        "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+        "Name": "LocatorOptimization-CssSelector",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "LocatorOptimization-CssSelector",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+          "ElapsedMilliseconds": 0,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.644477Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      },
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+        "SessionId": "094311fa317c8e6e00eb47c640cbad87",
+        "Name": "SelfHealing-SaveByClause",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "SelfHealing-SaveByClause",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter",
+          "ElapsedMilliseconds": 26,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.6718603Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      }
+    ]
+  }
+]

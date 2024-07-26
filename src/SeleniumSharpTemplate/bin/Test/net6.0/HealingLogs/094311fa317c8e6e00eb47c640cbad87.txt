@@ -1,0 +1,99 @@
+2024-07-26 21:56:40.914 +05:30 [INF] 
+Selenium.SelfHealing: Self-Healing: Initializing.
+ExecutionKey: SeleniumSharpTemplate.Tests.Feature.RateConverterFeature.LaunchGoogleRateConverter
+The ExecutionKey is a friendly name to represent the current WebDriver Session.
+This can be customized using the following if required.
+
+> var selfHealingWebDriver = yourWebDriver.ToSelfHealingDriver("TheUniqueExecutionKey");
+
+2024-07-26 21:56:40.915 +05:30 [INF] 
+Selenium.SelfHealing: Self-healing active
+v0.99.24.0
+
+  _________      .__   _____           ___ ___                .__  .__                
+ /   _____/ ____ |  |_/ ____\         /   |   \   ____ _____  |  | |__| ____    ____  
+ \_____  \_/ __ \|  |\   __\  ______ /    ~    \_/ __ \\__  \ |  | |  |/    \  / ___\ 
+ /        \  ___/|  |_|  |   /_____/ \    Y    /\  ___/ / __ \|  |_|  |   |  \/ /_/  >
+/_______  /\___  >____/__|            \___|_  /  \___  >____  /____/__|___|  /\___  / 
+        \/     \/                           \/       \/     \/             \//_____/  
+                      _____          __  .__                                          
+                     /  _  \   _____/  |_|__|__  __ ____                              
+  ______   ______   /  /_\  \_/ ___\   __\  \  \/ // __ \    ______   ______          
+ /_____/  /_____/  /    |    \  \___|  | |  |\   /\  ___/   /_____/  /_____/          
+                   \____|__  /\___  >__| |__| \_/  \___  >                            
+                           \/     \/                   \/                             
+
+2024-07-26 21:56:42.571 +05:30 [INF] 
+Selenium.SelfHealing: Initialization.
+Assembly location:
+C:\Dev\Code\src\SeleniumSharpTemplate\bin\Test\net6.0
+
+2024-07-26 21:56:42.571 +05:30 [INF] 
+Selenium.SelfHealing: Initialization.
+Assembly location:
+C:\Dev\Code\src\SeleniumSharpTemplate\bin\Test\net6.0
+
+2024-07-26 21:56:42.576 +05:30 [INF] 
+Selenium.SelfHealing: Initialization.
+SelfHealingData path:
+C:\Dev\Code\src\SeleniumSharpTemplate\SelfHealingData
+
+2024-07-26 21:56:42.576 +05:30 [INF] 
+Selenium.SelfHealing: Initialization.
+SelfHealingData path:
+C:\Dev\Code\src\SeleniumSharpTemplate\SelfHealingData
+
+2024-07-26 21:56:43.934 +05:30 [INF] 
+Selenium.SelfHealing: Performing Shut Down.
+
+2024-07-26 21:56:43.965 +05:30 [INF] 
+Selenium.SelfHealing: Insights: Saved Insights.
+file://C:/Dev/Code/src/SeleniumSharpTemplate/bin/Test/net6.0/HealingInsights/1a811ed42621b792a15c8257dc17e931.json
+
+2024-07-26 21:56:43.966 +05:30 [INF] 
+Selenium.SelfHealing: HealingInsights: Save successfully.
+  ___ ___                .__  .__                 .___              .__       .__     __          
+ /   |   \   ____ _____  |  | |__| ____    ____   |   | ____   _____|__| ____ |  |___/  |_  ______
+/    ~    \_/ __ \\__  \ |  | |  |/    \  / ___\  |   |/    \ /  ___/  |/ ___\|  |  \   __\/  ___/
+\    Y    /\  ___/ / __ \|  |_|  |   |  \/ /_/  > |   |   |  \\___ \|  / /_/  >   Y  \  |  \___ \ 
+ \___|_  /  \___  >____  /____/__|___|  /\___  /  |___|___|  /____  >__\___  /|___|  /__| /____  >
+       \/       \/     \/             \//_____/            \/     \/  /_____/      \/          \/ 
+                     _________                      .___                                          
+                    /   _____/____ ___  __ ____   __| _/                                          
+  ______   ______   \_____  \\__  \\  \/ // __ \ / __ |    ______   ______                        
+ /_____/  /_____/   /        \/ __ \\   /\  ___// /_/ |   /_____/  /_____/                        
+                   /_______  (____  /\_/  \___  >____ |                                           
+                           \/     \/          \/     \/                                           
+
+2024-07-26 21:56:44.013 +05:30 [ERR] 
+Selenium.SelfHealing: Self-Healing: Report Generation
+Congratulations, no self-healing was required this run.
+Report creation skipped.
+
+2024-07-26 21:56:44.833 +05:30 [INF] 
+Selenium.SelfHealing: Performing Shut Down.
+
+2024-07-26 21:56:44.835 +05:30 [INF] 
+Selenium.SelfHealing: Insights: Saved Insights.
+file://C:/Dev/Code/src/SeleniumSharpTemplate/bin/Test/net6.0/HealingInsights/094311fa317c8e6e00eb47c640cbad87.json
+
+2024-07-26 21:56:44.836 +05:30 [INF] 
+Selenium.SelfHealing: HealingInsights: Save successfully.
+  ___ ___                .__  .__                 .___              .__       .__     __          
+ /   |   \   ____ _____  |  | |__| ____    ____   |   | ____   _____|__| ____ |  |___/  |_  ______
+/    ~    \_/ __ \\__  \ |  | |  |/    \  / ___\  |   |/    \ /  ___/  |/ ___\|  |  \   __\/  ___/
+\    Y    /\  ___/ / __ \|  |_|  |   |  \/ /_/  > |   |   |  \\___ \|  / /_/  >   Y  \  |  \___ \ 
+ \___|_  /  \___  >____  /____/__|___|  /\___  /  |___|___|  /____  >__\___  /|___|  /__| /____  >
+       \/       \/     \/             \//_____/            \/     \/  /_____/      \/          \/ 
+                     _________                      .___                                          
+                    /   _____/____ ___  __ ____   __| _/                                          
+  ______   ______   \_____  \\__  \\  \/ // __ \ / __ |    ______   ______                        
+ /_____/  /_____/   /        \/ __ \\   /\  ___// /_/ |   /_____/  /_____/                        
+                   /_______  (____  /\_/  \___  >____ |                                           
+                           \/     \/          \/     \/                                           
+
+2024-07-26 21:56:44.864 +05:30 [ERR] 
+Selenium.SelfHealing: Self-Healing: Report Generation
+Congratulations, no self-healing was required this run.
+Report creation skipped.
+
