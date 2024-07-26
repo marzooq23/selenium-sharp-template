@@ -1,4 +1,8 @@
-﻿namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
+﻿using OpenQA.Selenium.Support.Extensions;
+using SeleniumSharpTemplate.Utilities.Exceptions;
+using SeleniumSharpTemplate.Utilities.Logging;
+
+namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
 {
     public static class ScreenshotExtensions
     {
@@ -18,7 +22,7 @@
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Logger.Log.Error($"{Messages.SCREENSHOT_EX_MESSAGE}\n{e.Message}\n");
             }
 
             return imagePath;

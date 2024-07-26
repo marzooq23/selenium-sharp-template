@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Tests.StepDefinitions
+﻿using SeleniumSharpTemplate.Tests.Pages;
+
+namespace SeleniumSharpTemplate.Tests.StepDefinitions
 {
     [Binding]
     public sealed class RateConverterStepDefinitions(GoogleHomePage googleHomePage)

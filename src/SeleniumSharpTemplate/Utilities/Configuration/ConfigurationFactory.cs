@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Utilities.Configuration
+﻿using Microsoft.Extensions.Configuration;
+
+namespace SeleniumSharpTemplate.Utilities.Configuration
 {
     public static class ConfigurationFactory
     {

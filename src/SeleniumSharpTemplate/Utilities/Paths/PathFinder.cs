@@ -2,24 +2,27 @@
 {
     public static class PathFinder
     {
+        private const string LOGS_FOLDER_NAME = "Logs";
         private const string REPORTS_FOLDER_NAME = "Reports";
         private const string GIT_IGNORE_FILE_NAME = ".gitignore";
         private const string ARTEFACTS_FOLDER_NAME = "Artefacts";
-        private const string SREENSHOTS_FOLDER_NAME = "Sreenshots";
+        private const string SCREENSHOTS_FOLDER_NAME = "Screenshots";
         private const string PDF_FOLDER_NAME = "Pdf";
-        private const string CONFIG_DIRECTORY = "Tests\\Config";
+        private const string CONFIG_DIRECTORY = "Tests\\Configuration";
         private const string EXECUTORS_DIRECTORY = "Utilities\\Executors";
-        private const string BROWSER_SETTINGS_DIRECTORY = "Utilities\\WebDrivers\\BrowserSettings";
+        private const string BROWSER_SETTINGS_DIRECTORY = "Utilities\\WebDrivers\\BrowserOptions";
 
         public static string Bin => AppDomain.CurrentDomain.BaseDirectory;
-
-        public static string Config => Path.Combine(Bin, CONFIG_DIRECTORY);
 
         public static string BrowserSettings =>
             Path.Combine(Bin, BROWSER_SETTINGS_DIRECTORY);
 
+        public static string Config => Path.Combine(Bin, CONFIG_DIRECTORY);
+
         public static string KillWebDrivers =>
             Path.Combine(Bin, EXECUTORS_DIRECTORY);
+
+        public static string Logs => Path.Combine(Bin, LOGS_FOLDER_NAME);
 
         public static string Root
         {
@@ -42,7 +45,7 @@
             .CreatePathIfNotExists();
 
         public static string Screenshots =>
-            Path.Combine(Reports, SREENSHOTS_FOLDER_NAME)
+            Path.Combine(Reports, SCREENSHOTS_FOLDER_NAME)
             .CreatePathIfNotExists();
 
         public static string Pdf =>

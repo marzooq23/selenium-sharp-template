@@ -1,9 +1,9 @@
 ﻿namespace SeleniumSharpTemplate.Tests.Pages
 {
-    public class GoogleHomePage(IWebDriver driver) : BasePage(driver)
+    public class GoogleHomePage(IWebDriver driver, Config.Config config) : BasePage(driver)
     {
         public void GoToGoogle() =>
-            driver.Navigate().GoToUrl(Config.Config.GetConfig().UrlGoogle!);
+            driver.Navigate().GoToUrl(config.UrlGoogle);
 
         public void Search(string value)
         {

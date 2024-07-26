@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Abstract
+﻿using SeleniumSharpTemplate.Utilities.WebDrivers.Interface;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Abstract
 {
     public abstract class WebDriverInitializerBase : IWebDriverInitializer
     {

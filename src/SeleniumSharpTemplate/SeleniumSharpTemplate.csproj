@@ -32,80 +32,87 @@
 		<PrivateAssets>all</PrivateAssets>
 		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
+	  <PackageReference Include="Selenium.SelfHealing.v4" Version="0.99.24-beta.1" />
 	  <PackageReference Include="Selenium.Support" Version="4.23.0">
 		<TreatAsUsed>true</TreatAsUsed>
 	  </PackageReference>
 	  <PackageReference Include="Selenium.WebDriver" Version="4.23.0">
 		<TreatAsUsed>true</TreatAsUsed>
 	  </PackageReference>
+	  <PackageReference Include="Serilog" Version="4.0.1" />
+	  <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+	  <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
 	  <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
   </ItemGroup>
 
   <ItemGroup>
+	  <Using Include="BoDi" />
 	  <Using Include="FluentAssertions" />
 	  <Using Include="NUnit.Framework" />
 	  <Using Include="OpenQA.Selenium" />
 	  <Using Include="SeleniumExtras.WaitHelpers" />
+	  <Using Include="Serilog" />
+	  <Using Include="System.Diagnostics" />
 	  <Using Include="TechTalk.SpecFlow" />
   </ItemGroup>
 
   <ItemGroup>
-	<None Update="Tests\Config\Config.Debug.json">
+	<None Update="Tests\Configuration\Config.Debug.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
-	<None Update="Tests\Config\Config.Dev.json">
+	<None Update="Tests\Configuration\Config.Dev.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
-	<None Update="Tests\Config\Config.json">
+	<None Update="Tests\Configuration\Config.json">
 	  <TransformOnBuild>true</TransformOnBuild>
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</None>
-	<None Update="Tests\Config\Config.Release.json">
+	<None Update="Tests\Configuration\Config.Release.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
-	<None Update="Tests\Config\Config.Staging.json">
+	<None Update="Tests\Configuration\Config.Staging.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
-	<None Update="Tests\Config\Config.Test.json">
+	<None Update="Tests\Configuration\Config.Test.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
-	<None Update="Tests\Config\Config.Uat.json">
+	<None Update="Tests\Configuration\Config.Uat.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>Config.json</DependentUpon>
 	</None>
 	<None Update="Utilities\Executors\KillWebDrivers.bat">
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Debug.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.Debug.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Dev.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.Dev.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.json">
 	  <TransformOnBuild>true</TransformOnBuild>
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Release.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.Release.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Staging.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.Staging.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Test.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.Test.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>
-	<None Update="Utilities\WebDrivers\BrowserSettings\BrowserSettings.Uat.json">
+	<None Update="Utilities\WebDrivers\BrowserOptions\BrowserSettings.Uat.json">
 	  <IsTransformFile>true</IsTransformFile>
 	  <DependentUpon>BrowserSettings.json</DependentUpon>
 	</None>

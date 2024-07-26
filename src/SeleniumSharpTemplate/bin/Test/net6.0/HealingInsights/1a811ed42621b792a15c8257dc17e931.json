@@ -1,0 +1,144 @@
+[
+  {
+    "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+    "SessionId": "1a811ed42621b792a15c8257dc17e931",
+    "Name": "AutoWait-FindElement",
+    "WasSuccessful": true,
+    "Details": {
+      "MethodName": "AutoWait-FindElement",
+      "Locator": {
+        "Value": "[name='q']",
+        "Type": "By.CssSelector"
+      },
+      "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+      "ElapsedMilliseconds": 264,
+      "WasSuccessful": true,
+      "Exception": null,
+      "CreatedDate": "2024-07-26T16:26:42.601389Z",
+      "ScreenShot": ""
+    },
+    "ChildSteps": [
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+        "SessionId": "1a811ed42621b792a15c8257dc17e931",
+        "Name": "AutoWait-ElementToBeClickable",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "AutoWait-ElementToBeClickable",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "NotAvailable",
+          "ElapsedMilliseconds": 130,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.4716977Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      },
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+        "SessionId": "1a811ed42621b792a15c8257dc17e931",
+        "Name": "SelfHealing-SaveByClause",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "SelfHealing-SaveByClause",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+          "ElapsedMilliseconds": 129,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.6013863Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      }
+    ]
+  },
+  {
+    "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+    "SessionId": "1a811ed42621b792a15c8257dc17e931",
+    "Name": "LocatorOptimization",
+    "WasSuccessful": true,
+    "Details": {
+      "MethodName": "LocatorOptimization",
+      "Locator": {
+        "Value": "[name='q']",
+        "Type": "By.CssSelector"
+      },
+      "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+      "ElapsedMilliseconds": 68,
+      "WasSuccessful": true,
+      "Exception": null,
+      "CreatedDate": "2024-07-26T16:26:42.6720767Z",
+      "ScreenShot": ""
+    },
+    "ChildSteps": [
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+        "SessionId": "1a811ed42621b792a15c8257dc17e931",
+        "Name": "LocatorOptimization-XPath",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "LocatorOptimization-XPath",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+          "ElapsedMilliseconds": 14,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.643523Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      },
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+        "SessionId": "1a811ed42621b792a15c8257dc17e931",
+        "Name": "LocatorOptimization-CssSelector",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "LocatorOptimization-CssSelector",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+          "ElapsedMilliseconds": 0,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.6445026Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      },
+      {
+        "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+        "SessionId": "1a811ed42621b792a15c8257dc17e931",
+        "Name": "SelfHealing-SaveByClause",
+        "WasSuccessful": true,
+        "Details": {
+          "MethodName": "SelfHealing-SaveByClause",
+          "Locator": {
+            "Value": "[name='q']",
+            "Type": "By.CssSelector"
+          },
+          "ExecutionKey": "SeleniumSharpTemplate.Tests.Feature.CalculatorFeature.LaunchGoogleCalculator",
+          "ElapsedMilliseconds": 26,
+          "WasSuccessful": true,
+          "Exception": null,
+          "CreatedDate": "2024-07-26T16:26:42.6720742Z",
+          "ScreenShot": ""
+        },
+        "ChildSteps": []
+      }
+    ]
+  }
+]

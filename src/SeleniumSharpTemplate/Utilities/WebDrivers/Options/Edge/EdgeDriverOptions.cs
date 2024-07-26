@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Edge
+﻿using OpenQA.Selenium.Edge;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Edge
 {
     public static class EdgeDriverOptions
     {

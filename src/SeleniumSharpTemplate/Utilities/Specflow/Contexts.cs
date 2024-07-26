@@ -1,4 +1,4 @@
-﻿namespace SeleniumSharpTemplate.Utilities.Specflow
+﻿namespace SeleniumSharpTemplate.Utilities.SpecFlow
 {
     public static class Contexts
     {

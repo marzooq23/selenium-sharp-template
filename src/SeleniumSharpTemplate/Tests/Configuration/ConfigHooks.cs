@@ -4,22 +4,18 @@
     [DebuggerStepThrough]
     public static class ConfigHooks
     {
-        private const string CONFIG_SECTION = "Config";
-        private const string CONFIG_JSON_FILENAME = "Config.json";
-
-        [BeforeTestRun]
+        [BeforeScenario]
         public static void RegisterConfig(IObjectContainer objectContainer)
         {
             Config? config = ConfigurationFactory
                 .GetBinding<Config>(
                 Path
-                .Combine(PathFinder.Config, CONFIG_JSON_FILENAME),
-                CONFIG_SECTION);
+                .Combine(PathFinder.Config, FileAndFolderName.CONFIG_JSON),
+                FileAndFolderName.CONFIG_SECTION);
 
             if (config != null)
             {
                 objectContainer.RegisterInstanceAs(config);
-                Config.RegisterConfigInstance(config);
             }
             else
             {
