@@ -8,9 +8,9 @@
         private const string ARTEFACTS_FOLDER_NAME = "Artefacts";
         private const string SCREENSHOTS_FOLDER_NAME = "Screenshots";
         private const string PDF_FOLDER_NAME = "Pdf";
-        private const string CONFIG_DIRECTORY = "Tests\\Config";
+        private const string CONFIG_DIRECTORY = "Tests\\Configuration";
         private const string EXECUTORS_DIRECTORY = "Utilities\\Executors";
-        private const string BROWSER_SETTINGS_DIRECTORY = "Utilities\\WebDrivers\\BrowserSettings";
+        private const string BROWSER_SETTINGS_DIRECTORY = "Utilities\\WebDrivers\\BrowserOptions";
 
         public static string Bin => AppDomain.CurrentDomain.BaseDirectory;
 

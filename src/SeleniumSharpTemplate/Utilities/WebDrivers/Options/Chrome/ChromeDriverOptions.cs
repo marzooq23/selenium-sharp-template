@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Chrome
+﻿using OpenQA.Selenium.Chrome;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Chrome
 {
     public static class ChromeDriverOptions
     {

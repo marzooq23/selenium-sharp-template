@@ -1,4 +1,9 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Firefox
+﻿using OpenQA.Selenium.Firefox;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Options.Firefox;
+using SeleniumSharpTemplate.Utilities.WebDrivers.ServiceCreator.Firefox;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Firefox
 {
     public class FirefoxWebDriverInitializer : WebDriverInitializerBase
     {

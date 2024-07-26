@@ -4,15 +4,13 @@
     [DebuggerStepThrough]
     public static class LoggingInitializer
     {
-        private const string LOG_FILE_NAME = "log.txt";
-
         public static Serilog.ILogger InitializeLogger
         {
             get
             {
                 return new LoggerConfiguration()
                     .MinimumLevel.Debug()
-                    .WriteTo.File(Path.Combine(PathFinder.Logs, LOG_FILE_NAME))
+                    .WriteTo.File(Path.Combine(PathFinder.Logs, FileAndFolderName.LOG_TXT))
                     .CreateLogger();
             }
         }

@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Firefox
+﻿using OpenQA.Selenium.Firefox;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Firefox
 {
     public static class FirefoxDriverOptions
     {

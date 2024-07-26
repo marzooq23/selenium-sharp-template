@@ -1,4 +1,9 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Edge
+﻿using OpenQA.Selenium.Edge;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Options.Edge;
+using SeleniumSharpTemplate.Utilities.WebDrivers.ServiceCreator.Edge;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Edge
 {
     internal class EdgeWebDriverInitializer : WebDriverInitializerBase
     {

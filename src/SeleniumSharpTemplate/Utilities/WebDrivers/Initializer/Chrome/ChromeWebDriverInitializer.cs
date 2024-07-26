@@ -1,4 +1,9 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Chrome
+﻿using OpenQA.Selenium.Chrome;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Options.Chrome;
+using SeleniumSharpTemplate.Utilities.WebDrivers.ServiceCreator.Chrome;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Initializer.Chrome
 {
     public class ChromeWebDriverInitializer : WebDriverInitializerBase
     {

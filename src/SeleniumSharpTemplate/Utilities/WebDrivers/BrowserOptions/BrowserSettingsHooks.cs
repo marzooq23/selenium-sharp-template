@@ -1,13 +1,13 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.BrowserSettings
+﻿using SeleniumSharpTemplate.Utilities.Executors;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Enum;
+using SeleniumSharpTemplate.Utilities.WebDrivers.Factory;
+
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.BrowserOptions
 {
     [Binding]
     [DebuggerStepThrough]
     public static class BrowserSettingsHooks
     {
-        private const string KILL_WEBDRIVERS_BAT = "KillWebDrivers.bat";
-        private const string BROWSERSETTINGS_SECTION = "BrowserSettings";
-        private const string BROWSERSETTINGS_JSON_FILENAME = "BrowserSettings.json";
-
         [BeforeTestRun]
         public static void RegisterBrowserSettings(IObjectContainer objectContainer)
         {
@@ -16,13 +16,13 @@
                 .GetBinding<BrowserSettings>(
                     Path.Combine(
                         PathFinder.BrowserSettings,
-                        BROWSERSETTINGS_JSON_FILENAME),
-                    BROWSERSETTINGS_SECTION);
+                        FileAndFolderName.BROWSERSETTINGS_JSON),
+                    FileAndFolderName.BROWSERSETTINGS_SECTION);
 
             if (browsersSettings != null)
             {
                 objectContainer.RegisterInstanceAs(browsersSettings);
-                BrowserSettings.RegisterBrowsersSettingsInstance(browsersSettings);
+                BrowserSettings.RegisterInstance(browsersSettings);
             }
             else
             {
@@ -50,7 +50,7 @@
         public static void KillWebDrivers() =>
             ProcessRunner.RunBatchFile(
                 Path.Combine(
-                    PathFinder.KillWebDrivers, KILL_WEBDRIVERS_BAT),
+                    PathFinder.KillWebDrivers, FileAndFolderName.KILL_WEBDRIVERS_BAT),
                 PathFinder.KillWebDrivers);
     }
 }

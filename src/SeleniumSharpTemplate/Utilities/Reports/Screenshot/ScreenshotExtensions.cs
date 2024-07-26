@@ -1,4 +1,6 @@
-﻿using SeleniumSharpTemplate.Utilities.Logging;
+﻿using OpenQA.Selenium.Support.Extensions;
+using SeleniumSharpTemplate.Utilities.Exceptions;
+using SeleniumSharpTemplate.Utilities.Logging;
 
 namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
 {
@@ -20,7 +22,7 @@ namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
             }
             catch (Exception e)
             {
-                Logger.Log.Error(e.Message);
+                Logger.Log.Error($"{Messages.SCREENSHOT_EX_MESSAGE}\n{e.Message}\n");
             }
 
             return imagePath;
