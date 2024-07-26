@@ -35,7 +35,7 @@
         {
             if (objectContainer.IsRegistered<IWebDriver>()) return;
 
-            IWebDriver driver = WebDriverFactory.CreateWebDriver(BrowserType.Chrome);
+            IWebDriver driver = WebDriverFactory.CreateWebDriver(BrowserType.Chrome, DriverType.EventFiringAndSelfHealing);
             objectContainer.RegisterInstanceAs(driver);
         }
 

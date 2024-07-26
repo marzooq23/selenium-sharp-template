@@ -11,7 +11,7 @@ global using SeleniumSharpTemplate.Utilities.Configuration;
 global using SeleniumSharpTemplate.Utilities.Executors;
 global using SeleniumSharpTemplate.Utilities.Paths;
 global using SeleniumSharpTemplate.Utilities.Reports.Screenshot;
-global using SeleniumSharpTemplate.Utilities.Specflow;
+global using SeleniumSharpTemplate.Utilities.SpecFlow;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Enum;
 global using SeleniumSharpTemplate.Utilities.WebDrivers.Factory;

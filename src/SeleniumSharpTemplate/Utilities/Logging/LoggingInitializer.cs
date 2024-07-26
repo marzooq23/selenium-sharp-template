@@ -30,9 +30,5 @@
             }
 #pragma warning restore S2589 // Boolean expressions should not be gratuitous
         }
-
-        [BeforeTestRun]
-        public static void RegisterLogger(Logger logger) =>
-            logger.Information("Test run initiated");
     }
 }

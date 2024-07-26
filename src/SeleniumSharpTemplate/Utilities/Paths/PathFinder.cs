@@ -6,7 +6,7 @@
         private const string REPORTS_FOLDER_NAME = "Reports";
         private const string GIT_IGNORE_FILE_NAME = ".gitignore";
         private const string ARTEFACTS_FOLDER_NAME = "Artefacts";
-        private const string SREENSHOTS_FOLDER_NAME = "Sreenshots";
+        private const string SCREENSHOTS_FOLDER_NAME = "Screenshots";
         private const string PDF_FOLDER_NAME = "Pdf";
         private const string CONFIG_DIRECTORY = "Tests\\Config";
         private const string EXECUTORS_DIRECTORY = "Utilities\\Executors";
@@ -45,7 +45,7 @@
             .CreatePathIfNotExists();
 
         public static string Screenshots =>
-            Path.Combine(Reports, SREENSHOTS_FOLDER_NAME)
+            Path.Combine(Reports, SCREENSHOTS_FOLDER_NAME)
             .CreatePathIfNotExists();
 
         public static string Pdf =>

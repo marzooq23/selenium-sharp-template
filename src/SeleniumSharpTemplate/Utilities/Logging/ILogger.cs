@@ -2,7 +2,7 @@
 {
     public interface ILogger
     {
-        static Logger? Log { get; set; }
+        static Logger Log { get; set; } = null!;
 
         void Debug(string message);
 

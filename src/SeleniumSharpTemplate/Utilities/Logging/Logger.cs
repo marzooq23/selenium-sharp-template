@@ -6,7 +6,7 @@
 
         public Logger() => _logger = LoggingInitializer.InitializeLogger;
 
-        public static Logger? Log { get; set; }
+        public static Logger Log { get; set; } = null!;
 
         public static void RegisterLogger(Logger logger) =>
             Log = logger ?? throw new NullReferenceException("Please configure Serilog");

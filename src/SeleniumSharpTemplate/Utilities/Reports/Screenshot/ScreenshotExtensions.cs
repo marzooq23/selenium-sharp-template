@@ -1,4 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
+﻿using SeleniumSharpTemplate.Utilities.Logging;
+
+namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
 {
     public static class ScreenshotExtensions
     {
@@ -18,7 +20,7 @@
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Logger.Log.Error(e.Message);
             }
 
             return imagePath;
