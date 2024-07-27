@@ -2,4 +2,3 @@
 global using SeleniumSharpTemplate.Utilities.Configuration;
 global using SeleniumSharpTemplate.Utilities.Paths;
 global using SeleniumSharpTemplate.Utilities.Reports.Screenshot;
-global using SeleniumSharpTemplate.Utilities.SpecFlow;

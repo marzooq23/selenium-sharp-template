@@ -12,7 +12,6 @@
                     PathFinder.Screenshots,
                     featureContext.FeatureInfo.Title)
                 .CreatePathIfNotExists();
-            Contexts.RegisterFeatureContext(featureContext);
         }
 
         [BeforeScenario]
@@ -23,7 +22,6 @@
                     PathFinder.FeatureTitleScreenshots!,
                     scenarioContext.ScenarioInfo.Title)
                 .CreatePathIfNotExists();
-            Contexts.RegisterScenarioContext(scenarioContext);
         }
     }
 }
