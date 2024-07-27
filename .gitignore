@@ -438,4 +438,5 @@ obj/
 *.feature.xlsx.*
 
 ### Artefacts ###
-/Artefacts/
+/Artefacts/**/*
+/**/*/Logs/

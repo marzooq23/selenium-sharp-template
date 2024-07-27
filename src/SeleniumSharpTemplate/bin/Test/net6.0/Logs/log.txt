@@ -1,6 +1,0 @@
-2024-07-26 21:56:34.497 +05:30 [INF] Test starts
-2024-07-26 21:56:40.944 +05:30 [INF] Execution begins for test 'Launch Google Calculator'
-2024-07-26 21:56:40.944 +05:30 [INF] Execution begins for test 'Launch Google Calculator'
-2024-07-26 21:56:44.178 +05:30 [INF] Execution ends for test 'Launch Google Calculator'
-2024-07-26 21:56:45.077 +05:30 [INF] Execution ends for test 'Launch Google Calculator'
-2024-07-26 21:56:45.726 +05:30 [INF] Test ends
