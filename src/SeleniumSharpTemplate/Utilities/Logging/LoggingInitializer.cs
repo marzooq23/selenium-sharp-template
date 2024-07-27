@@ -4,29 +4,13 @@
     [DebuggerStepThrough]
     public static class LoggingInitializer
     {
-        public static Serilog.ILogger InitializeLogger
+        [BeforeTestRun]
+        public static void RegisterLogger()
         {
-            get
-            {
-                return new LoggerConfiguration()
-                    .MinimumLevel.Debug()
+            Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Information()
                     .WriteTo.File(Path.Combine(PathFinder.Logs, FileAndFolderName.LOG_TXT))
                     .CreateLogger();
-            }
-        }
-
-        [BeforeTestRun]
-        public static void RegisterLogger(IObjectContainer objectContainer)
-        {
-            Logger logger = new();
-
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous
-            if (logger != null)
-            {
-                objectContainer.RegisterInstanceAs(logger);
-                Logger.RegisterLogger(logger);
-            }
-#pragma warning restore S2589 // Boolean expressions should not be gratuitous
         }
     }
 }

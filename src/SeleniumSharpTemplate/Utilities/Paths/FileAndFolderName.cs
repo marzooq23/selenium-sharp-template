@@ -2,6 +2,8 @@
 {
     public static class FileAndFolderName
     {
+        public const string TXT = ".txt";
+
         public const string CONFIG_SECTION = "Config";
         public const string BROWSERSETTINGS_SECTION = "BrowserSettings";
 

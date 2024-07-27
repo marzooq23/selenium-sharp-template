@@ -35,7 +35,7 @@ namespace SeleniumSharpTemplate.Utilities.WebDrivers.BrowserOptions
         {
             if (objectContainer.IsRegistered<IWebDriver>()) return;
 
-            IWebDriver driver = WebDriverFactory.CreateWebDriver(BrowserType.Chrome, DriverType.EventFiringAndSelfHealing);
+            IWebDriver driver = WebDriverFactory.CreateWebDriver(BrowserType.ChromeHeadless, DriverType.EventFiring);
             objectContainer.RegisterInstanceAs(driver);
         }
 

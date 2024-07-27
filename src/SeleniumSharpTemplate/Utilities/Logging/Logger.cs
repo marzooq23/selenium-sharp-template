@@ -1,24 +1,19 @@
-﻿namespace SeleniumSharpTemplate.Utilities.Logging
+﻿using Serilog.Events;
+
+namespace SeleniumSharpTemplate.Utilities.Logging
 {
     public class Logger : ILogger
     {
-        private readonly Serilog.ILogger _logger;
+        public static void Debug(string message) => Log.Debug(message);
 
-        public Logger() => _logger = LoggingInitializer.InitializeLogger;
+        public static void Error(string message) => Log.Error(message);
 
-        public static Logger Log { get; set; } = null!;
+        public static void Fatal(string message) => Log.Fatal(message);
 
-        public static void RegisterLogger(Logger logger) =>
-            Log = logger ?? throw new NullReferenceException("Please configure Serilog");
+        public static void Information(string message) => Log.Information(message);
 
-        public void Debug(string message) => _logger.Debug(message);
+        public static void Warning(string message) => Log.Warning(message);
 
-        public void Error(string message) => _logger.Error(message);
-
-        public void Fatal(string message) => _logger.Fatal(message);
-
-        public void Information(string message) => _logger.Information(message);
-
-        public void Warning(string message) => _logger.Warning(message);
+        public void Write(LogEvent logEvent) => Log.Write(logEvent);
     }
 }

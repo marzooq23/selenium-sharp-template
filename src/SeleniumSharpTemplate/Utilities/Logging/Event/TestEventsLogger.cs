@@ -11,12 +11,12 @@ namespace SeleniumSharpTemplate.Utilities.Logging.Event
             TestEventListeners.TestSuiteStartEvent();
 
         [BeforeScenario]
-        public static void LogTestInitiation() =>
-            TestEventListeners.TestExecutionStartEvent();
+        public static void LogTestInitiation(ScenarioContext ScenarioContext) =>
+            TestEventListeners.TestExecutionStartEvent(ScenarioContext.ScenarioInfo.Title);
 
         [AfterScenario]
-        public static void LogTestCompletion() =>
-            TestEventListeners.TestExecutionEndEvent();
+        public static void LogTestCompletion(ScenarioContext ScenarioContext) =>
+            TestEventListeners.TestExecutionEndEvent(ScenarioContext.ScenarioInfo.Title);
 
         [AfterTestRun]
         public static void LogTestSuiteCompletion() =>
