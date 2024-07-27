@@ -1,32 +1,20 @@
-﻿using Serilog.Context;
-
-namespace SeleniumSharpTemplate.Utilities.Logging.Events
+﻿namespace SeleniumSharpTemplate.Utilities.Logging.Events
 {
-    public static class TestEventListeners
+    public class TestEventListeners
     {
-        private const string TESTCASE_PROPERTY = "TestCase";
-
         private const string DOTTED_LINE =
             "---------------------------------------------------------------------------------------------------";
 
         public static void TestSuiteStartEvent() =>
-            Logger.Log.Information($"Test starts");
+            Logger.Information($"Test starts");
 
-        public static void TestExecutionStartEvent()
-        {
-            var testCase = Contexts.GetScenarioTitle;
-            LogContext.PushProperty(TESTCASE_PROPERTY, testCase);
-            Logger.Log.Information($"Execution begins for test '{testCase}'");
-        }
+        public static void TestExecutionStartEvent(string testCase) =>
+            Logger.Information($"\n{DOTTED_LINE}\nExecution begins for test '{testCase}'\n");
 
-        public static void TestExecutionEndEvent()
-        {
-            var testCase = Contexts.GetScenarioTitle;
-            LogContext.PushProperty(TESTCASE_PROPERTY, null);
-            Logger.Log.Information($"Execution ends for test '{testCase}'");
-        }
+        public static void TestExecutionEndEvent(string testCase) =>
+            Logger.Information($"\nExecution ends for test '{testCase}'\n{DOTTED_LINE}\n");
 
         public static void TestSuiteEndEvent() =>
-            Logger.Log.Information($"Test ends");
+            Logger.Information($"Test ends");
     }
 }
