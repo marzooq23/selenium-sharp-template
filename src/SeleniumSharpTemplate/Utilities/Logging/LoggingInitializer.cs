@@ -8,7 +8,7 @@
         public static void RegisterLogger()
         {
             Log.Logger = new LoggerConfiguration()
-                    .MinimumLevel.Debug()
+                    .MinimumLevel.Information()
                     .WriteTo.File(Path.Combine(PathFinder.Logs, FileAndFolderName.LOG_TXT))
                     .CreateLogger();
         }
