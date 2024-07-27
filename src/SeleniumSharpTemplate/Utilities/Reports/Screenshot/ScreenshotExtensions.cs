@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium.Support.Extensions;
 using SeleniumSharpTemplate.Utilities.Exceptions;
-using SeleniumSharpTemplate.Utilities.Logging;
 
 namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot
 {

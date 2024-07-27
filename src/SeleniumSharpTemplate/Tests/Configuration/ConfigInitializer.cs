@@ -2,7 +2,7 @@
 {
     [Binding]
     [DebuggerStepThrough]
-    public static class ConfigHooks
+    internal static class ConfigInitializer
     {
         [BeforeScenario]
         public static void RegisterConfig(IObjectContainer objectContainer)

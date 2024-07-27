@@ -2,7 +2,7 @@
 {
     [Binding]
     [DebuggerStepThrough]
-    public static class LoggingInitializer
+    internal static class LoggingInitializer
     {
         [BeforeTestRun]
         public static void RegisterLogger()

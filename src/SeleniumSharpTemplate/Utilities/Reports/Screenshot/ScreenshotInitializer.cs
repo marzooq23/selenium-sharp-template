@@ -2,7 +2,7 @@
 {
     [Binding]
     [DebuggerStepThrough]
-    public static class ScreenshotHooks
+    internal static class ScreenshotInitializer
     {
         [BeforeFeature]
         public static void CreateScreenshotsFolderBeforeFeature(FeatureContext featureContext)

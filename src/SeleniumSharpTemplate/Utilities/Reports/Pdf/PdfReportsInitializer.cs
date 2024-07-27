@@ -2,7 +2,7 @@
 {
     [Binding]
     [DebuggerStepThrough]
-    public static class PdfHooks
+    internal static class PdfReportsInitializer
     {
         [BeforeFeature]
         public static void CreatePdfFolderBeforeFeature(FeatureContext featureContext)
