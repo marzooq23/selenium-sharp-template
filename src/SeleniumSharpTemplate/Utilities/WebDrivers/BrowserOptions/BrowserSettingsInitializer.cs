@@ -6,7 +6,7 @@ namespace SeleniumSharpTemplate.Utilities.WebDrivers.BrowserOptions
 {
     [Binding]
     [DebuggerStepThrough]
-    public static class BrowserSettingsHooks
+    internal static class BrowserSettingsInitializer
     {
         [BeforeTestRun]
         public static void RegisterBrowserSettings(IObjectContainer objectContainer)

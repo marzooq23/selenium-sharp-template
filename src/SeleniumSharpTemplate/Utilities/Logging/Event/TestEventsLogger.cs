@@ -4,7 +4,7 @@ namespace SeleniumSharpTemplate.Utilities.Logging.Event
 {
     [Binding]
     [DebuggerStepThrough]
-    public static class TestEventsLogger
+    internal static class TestEventsLogger
     {
         [BeforeTestRun]
         public static void LogTestSuiteInitiation() =>
