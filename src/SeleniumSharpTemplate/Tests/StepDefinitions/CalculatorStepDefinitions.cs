@@ -3,7 +3,7 @@
 namespace SeleniumSharpTemplate.Tests.StepDefinitions
 {
     [Binding]
-    public sealed class CalculatorStepDefinitions(GoogleHomePage googleHomePage)
+    public sealed class CalculatorStepDefinitions(GoogleHomePage googleHomePage, ExtentTest extentTest)
     {
         [Given("I launch google calculator")]
         public void GivenILaunchGoogleCalculator()
@@ -12,7 +12,8 @@ namespace SeleniumSharpTemplate.Tests.StepDefinitions
             googleHomePage.GoToGoogle();
             googleHomePage.Search(searchText);
             googleHomePage.GetPageTitle.Should().StartWith(searchText);
-            googleHomePage.driver.CaptureScreenshot($"Search result '{searchText}' verified");
+            var title = $"Search result '{searchText}' verified";
+            extentTest.LogScreenshot(title, googleHomePage.driver.CaptureScreenshot(title));
         }
     }
 }

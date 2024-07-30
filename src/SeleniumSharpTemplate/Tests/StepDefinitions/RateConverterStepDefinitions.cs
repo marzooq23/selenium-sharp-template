@@ -3,7 +3,7 @@
 namespace SeleniumSharpTemplate.Tests.StepDefinitions
 {
     [Binding]
-    public sealed class RateConverterStepDefinitions(GoogleHomePage googleHomePage)
+    public sealed class RateConverterStepDefinitions(GoogleHomePage googleHomePage, ExtentTest extentTest)
     {
         [Given("I launch google rate converter")]
         public void GivenILaunchGoogleRateConverter()
@@ -12,7 +12,8 @@ namespace SeleniumSharpTemplate.Tests.StepDefinitions
             googleHomePage.GoToGoogle();
             googleHomePage.Search(searchText);
             googleHomePage.GetPageTitle.Should().StartWith(searchText);
-            googleHomePage.driver.CaptureScreenshot($"Search result '{searchText}' verified");
+            var title = $"Search result '{searchText}' verified";
+            extentTest.LogScreenshot(title, googleHomePage.driver.CaptureScreenshot(title));
         }
     }
 }
