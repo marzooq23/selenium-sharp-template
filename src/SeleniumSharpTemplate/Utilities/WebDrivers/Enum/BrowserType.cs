@@ -1,14 +1,13 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Enum
+﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Enum;
+
+public enum BrowserType
 {
-    public enum BrowserType
-    {
-        Chrome = 0,
-        ChromeHeadless,
-        Edge,
-        EdgeHeadless,
-        Firefox,
-        FirefoxHeadless,
-        InternetExplorer,
-        InternetExplorerHeadless
-    }
+    Chrome = 0,
+    ChromeHeadless,
+    Edge,
+    EdgeHeadless,
+    Firefox,
+    FirefoxHeadless,
+    InternetExplorer,
+    InternetExplorerHeadless
 }

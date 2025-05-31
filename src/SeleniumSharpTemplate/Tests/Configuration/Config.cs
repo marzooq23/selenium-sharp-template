@@ -1,7 +1,6 @@
-﻿namespace SeleniumSharpTemplate.Tests.Config
+﻿namespace SeleniumSharpTemplate.Tests.Configuration;
+
+public class Config
 {
-    public class Config
-    {
-        public string UrlGoogle { get; set; } = null!;
-    }
+    public string UrlGoogle { get; set; } = null!;
 }

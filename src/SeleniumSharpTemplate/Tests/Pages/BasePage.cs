@@ -1,38 +1,37 @@
-﻿namespace SeleniumSharpTemplate.Tests.Pages
+﻿namespace SeleniumSharpTemplate.Tests.Pages;
+
+public class BasePage(IWebDriver driver)
 {
-    public class BasePage(IWebDriver driver)
+    public readonly IWebDriver driver =
+        driver ?? throw new ArgumentNullException(nameof(driver));
+
+    public void WaitUntilTitleContains(string title)
     {
-        public readonly IWebDriver driver =
-            driver ?? throw new ArgumentNullException(nameof(driver));
+        WebDriverWait webDriverWait = new(driver, TimeSpan.FromSeconds(10));
+        webDriverWait.Until(ExpectedConditions.TitleContains(title));
+    }
 
-        public void WaitUntilTitleContains(string title)
+    public void GoToUrl(string url)
+    {
+        try
         {
-            WebDriverWait webDriverWait = new(driver, TimeSpan.FromSeconds(10));
-            webDriverWait.Until(ExpectedConditions.TitleContains(title));
+            driver.Navigate().GoToUrl(url);
         }
-
-        public void GoToUrl(string url)
+        catch (Exception)
         {
-            try
-            {
-                driver.Navigate().GoToUrl(url);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            throw;
         }
+    }
 
-        public void GoToUrl(Uri url)
+    public void GoToUrl(Uri url)
+    {
+        try
         {
-            try
-            {
-                driver.Navigate().GoToUrl(url);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            driver.Navigate().GoToUrl(url);
+        }
+        catch (Exception)
+        {
+            throw;
         }
     }
 }

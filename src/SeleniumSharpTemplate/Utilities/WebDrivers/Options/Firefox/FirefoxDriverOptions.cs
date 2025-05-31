@@ -1,42 +1,41 @@
 ﻿using OpenQA.Selenium.Firefox;
 
-namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Firefox
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Firefox;
+
+public static class FirefoxDriverOptions
 {
-    public static class FirefoxDriverOptions
+    private static readonly string[] AdditionalArguments =
+    [
+        "--test-type",
+        "--incognito",
+        "--start-maximized",
+        "--ignore-certificate-errors"
+    ];
+
+    public static FirefoxOptions Options
     {
-        private static readonly string[] AdditionalArguments =
-        [
-            "--test-type",
-            "--incognito",
-            "--start-maximized",
-            "--ignore-certificate-errors"
-        ];
-
-        public static FirefoxOptions Options
+        get
         {
-            get
+            FirefoxOptions firefoxOptions = new()
             {
-                FirefoxOptions firefoxOptions = new()
-                {
-                    AcceptInsecureCertificates = true
-                };
+                AcceptInsecureCertificates = true
+            };
 
-                firefoxOptions.AddArguments(AdditionalArguments);
+            firefoxOptions.AddArguments(AdditionalArguments);
 
-                return firefoxOptions;
-            }
+            return firefoxOptions;
         }
+    }
 
-        public static FirefoxOptions HeadlessOptions
+    public static FirefoxOptions HeadlessOptions
+    {
+        get
         {
-            get
-            {
-                FirefoxOptions firefoxHeadlessOptions = Options;
+            FirefoxOptions firefoxHeadlessOptions = Options;
 
-                firefoxHeadlessOptions.AddArgument("-headless");
+            firefoxHeadlessOptions.AddArgument("-headless");
 
-                return firefoxHeadlessOptions;
-            }
+            return firefoxHeadlessOptions;
         }
     }
 }
