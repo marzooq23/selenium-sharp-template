@@ -1,43 +1,42 @@
 ﻿using OpenQA.Selenium.Edge;
 
-namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Edge
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Edge;
+
+public static class EdgeDriverOptions
 {
-    public static class EdgeDriverOptions
+    private static readonly string[] AdditionalArguments =
+    [
+        "--test-type",
+        "--inprivate",
+        "--start-maximized",
+        "--ignore-certificate-errors"
+    ];
+
+    public static EdgeOptions Options
     {
-        private static readonly string[] AdditionalArguments =
-        [
-            "--test-type",
-            "--inprivate",
-            "--start-maximized",
-            "--ignore-certificate-errors"
-        ];
-
-        public static EdgeOptions Options
+        get
         {
-            get
+            EdgeOptions edgeOptions = new()
             {
-                EdgeOptions edgeOptions = new()
-                {
-                    LeaveBrowserRunning = false,
-                    AcceptInsecureCertificates = true
-                };
+                LeaveBrowserRunning = false,
+                AcceptInsecureCertificates = true
+            };
 
-                edgeOptions.AddArguments(AdditionalArguments);
+            edgeOptions.AddArguments(AdditionalArguments);
 
-                return edgeOptions;
-            }
+            return edgeOptions;
         }
+    }
 
-        public static EdgeOptions HeadlessOptions
+    public static EdgeOptions HeadlessOptions
+    {
+        get
         {
-            get
-            {
-                EdgeOptions edgeHeadlessOptions = Options;
+            EdgeOptions edgeHeadlessOptions = Options;
 
-                edgeHeadlessOptions.AddArgument("-headless");
+            edgeHeadlessOptions.AddArgument("-headless");
 
-                return edgeHeadlessOptions;
-            }
+            return edgeHeadlessOptions;
         }
     }
 }

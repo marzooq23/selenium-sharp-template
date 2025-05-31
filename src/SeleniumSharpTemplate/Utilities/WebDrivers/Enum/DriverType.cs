@@ -1,10 +1,9 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Enum
+﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Enum;
+
+public enum DriverType
 {
-    public enum DriverType
-    {
-        Standard = 0,
-        EventFiring,
-        SelfHealing,
-        EventFiringAndSelfHealing
-    }
+    Standard = 0,
+    EventFiring,
+    SelfHealing,
+    EventFiringAndSelfHealing
 }

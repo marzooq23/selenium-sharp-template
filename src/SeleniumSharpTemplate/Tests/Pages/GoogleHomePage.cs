@@ -1,30 +1,31 @@
-﻿namespace SeleniumSharpTemplate.Tests.Pages
+﻿using SeleniumSharpTemplate.Tests.Configuration;
+
+namespace SeleniumSharpTemplate.Tests.Pages;
+
+public class GoogleHomePage(IWebDriver driver, Config config) : BasePage(driver)
 {
-    public class GoogleHomePage(IWebDriver driver, Config.Config config) : BasePage(driver)
+    public void GoToGoogle() =>
+        driver.Navigate().GoToUrl(config.UrlGoogle);
+
+    public void Search(string value)
     {
-        public void GoToGoogle() =>
-            driver.Navigate().GoToUrl(config.UrlGoogle);
+        IWebElement searchTextBox = driver.FindElement(Locators.SearchTextBox);
+        searchTextBox.SendKeys(value);
+        searchTextBox.Submit();
+        WaitUntilTitleContains(value);
+    }
 
-        public void Search(string value)
+    public string GetPageTitle
+    {
+        get
         {
-            IWebElement searchTextBox = driver.FindElement(Locators.SearchTextBox);
-            searchTextBox.SendKeys(value);
-            searchTextBox.Submit();
-            WaitUntilTitleContains(value);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            return driver.Title;
         }
+    }
 
-        public string GetPageTitle
-        {
-            get
-            {
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                return driver.Title;
-            }
-        }
-
-        private static class Locators
-        {
-            public static By SearchTextBox => By.CssSelector("[name='q']");
-        }
+    private static class Locators
+    {
+        public static By SearchTextBox => By.CssSelector("[name='q']");
     }
 }

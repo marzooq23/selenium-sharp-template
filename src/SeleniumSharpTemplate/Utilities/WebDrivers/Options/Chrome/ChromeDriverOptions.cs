@@ -1,43 +1,42 @@
 ﻿using OpenQA.Selenium.Chrome;
 
-namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Chrome
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Options.Chrome;
+
+public static class ChromeDriverOptions
 {
-    public static class ChromeDriverOptions
+    private static readonly string[] AdditionalArguments =
+    [
+        "--test-type",
+        "--incognito",
+        "--start-maximized",
+        "--ignore-certificate-errors"
+    ];
+
+    public static ChromeOptions Options
     {
-        private static readonly string[] AdditionalArguments =
-        [
-            "--test-type",
-            "--incognito",
-            "--start-maximized",
-            "--ignore-certificate-errors"
-        ];
-
-        public static ChromeOptions Options
+        get
         {
-            get
+            ChromeOptions chromeOptions = new()
             {
-                ChromeOptions chromeOptions = new()
-                {
-                    LeaveBrowserRunning = false,
-                    AcceptInsecureCertificates = true
-                };
+                LeaveBrowserRunning = false,
+                AcceptInsecureCertificates = true
+            };
 
-                chromeOptions.AddArguments(AdditionalArguments);
+            chromeOptions.AddArguments(AdditionalArguments);
 
-                return chromeOptions;
-            }
+            return chromeOptions;
         }
+    }
 
-        public static ChromeOptions HeadlessOptions
+    public static ChromeOptions HeadlessOptions
+    {
+        get
         {
-            get
-            {
-                ChromeOptions chromeHeadlessOptions = Options;
+            ChromeOptions chromeHeadlessOptions = Options;
 
-                chromeHeadlessOptions.AddArguments("-headless");
+            chromeHeadlessOptions.AddArguments("-headless");
 
-                return chromeHeadlessOptions;
-            }
+            return chromeHeadlessOptions;
         }
     }
 }

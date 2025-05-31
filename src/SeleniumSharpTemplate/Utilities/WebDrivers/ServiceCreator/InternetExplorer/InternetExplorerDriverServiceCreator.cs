@@ -1,26 +1,25 @@
 ﻿using OpenQA.Selenium.IE;
 
-namespace SeleniumSharpTemplate.Utilities.WebDrivers.ServiceCreator.InternetExplorer
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.ServiceCreator.InternetExplorer;
+
+public static class InternetExplorerDriverServiceCreator
 {
-    public static class InternetExplorerDriverServiceCreator
+    private const string SE_CACHE_PATH = "SE_CACHE_PATH";
+
+    public static InternetExplorerDriverService Service
     {
-        private const string SE_CACHE_PATH = "SE_CACHE_PATH";
-
-        public static InternetExplorerDriverService Service
+        get
         {
-            get
-            {
-                DirectoryInfo driverPath =
-                    new($"{Path.Combine(PathFinder.Bin, FileAndFolderName.DRIVER)}");
-                if (!driverPath.Exists) driverPath.Create();
+            DirectoryInfo driverPath =
+                new($"{Path.Combine(PathFinder.Bin, FileAndFolderName.DRIVER)}");
+            if (!driverPath.Exists) driverPath.Create();
 
-                Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());
+            Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());
 
-                InternetExplorerDriverService service = InternetExplorerDriverService.CreateDefaultService();
-                service.Start();
+            InternetExplorerDriverService service = InternetExplorerDriverService.CreateDefaultService();
+            service.Start();
 
-                return service;
-            }
+            return service;
         }
     }
 }
