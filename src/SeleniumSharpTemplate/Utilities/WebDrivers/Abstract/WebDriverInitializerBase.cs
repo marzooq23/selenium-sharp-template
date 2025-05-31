@@ -1,11 +1,10 @@
 ﻿using SeleniumSharpTemplate.Utilities.WebDrivers.Interface;
 
-namespace SeleniumSharpTemplate.Utilities.WebDrivers.Abstract
-{
-    public abstract class WebDriverInitializerBase : IWebDriverInitializer
-    {
-        public abstract IWebDriver InitializeDriver();
+namespace SeleniumSharpTemplate.Utilities.WebDrivers.Abstract;
 
-        public abstract IWebDriver InitializeHeadlessDriver();
-    }
+public abstract class WebDriverInitializerBase : IWebDriverInitializer
+{
+    public abstract IWebDriver InitializeDriver();
+
+    public abstract IWebDriver InitializeHeadlessDriver();
 }

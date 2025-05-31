@@ -1,9 +1,8 @@
-﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Interface
-{
-    public interface IWebDriverInitializer
-    {
-        IWebDriver InitializeDriver();
+﻿namespace SeleniumSharpTemplate.Utilities.WebDrivers.Interface;
 
-        IWebDriver InitializeHeadlessDriver();
-    }
+public interface IWebDriverInitializer
+{
+    IWebDriver InitializeDriver();
+
+    IWebDriver InitializeHeadlessDriver();
 }
