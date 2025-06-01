@@ -1,0 +1,10 @@
+2025-06-01 17:19:44.495 +05:30 [INF] Test starts
+2025-06-01 17:19:45.692 +05:30 [INF] [TID:13 - Launch Google Calculator] Execution begins for test 'Launch Google Calculator'
+2025-06-01 17:19:47.166 +05:30 [INF] [TID:15 - Launch Google Rate Converter] Execution begins for test 'Launch Google Rate Converter'
+2025-06-01 17:19:49.248 +05:30 [INF] [TID:13 - Launch Google Calculator] Execution ends for test 'Launch Google Calculator'
+2025-06-01 17:19:50.372 +05:30 [INF] [TID:13 - Launch Googles Calculator] Execution begins for test 'Launch Googles Calculator'
+2025-06-01 17:19:54.075 +05:30 [INF] [TID:13 - Launch Googles Calculator] Execution ends for test 'Launch Googles Calculator'
+2025-06-01 17:19:59.257 +05:30 [INF] [TID:15 - Launch Google Rate Converter] Execution ends for test 'Launch Google Rate Converter'
+2025-06-01 17:20:00.363 +05:30 [INF] [TID:15 - Launch Googles Rate Converter] Execution begins for test 'Launch Googles Rate Converter'
+2025-06-01 17:20:12.566 +05:30 [INF] [TID:15 - Launch Googles Rate Converter] Execution ends for test 'Launch Googles Rate Converter'
+2025-06-01 17:20:15.861 +05:30 [INF] Test ends
