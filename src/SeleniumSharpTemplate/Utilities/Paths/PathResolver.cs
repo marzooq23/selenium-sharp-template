@@ -2,7 +2,7 @@
 
 public static class PathResolver
 {
-    public static string CreatePathIfNotExists(this string path)
+    public static string CreateFolderIfNotExists(this string path)
     {
         DirectoryInfo directoryInfo = new(path);
         if (!directoryInfo.Exists) directoryInfo.Create();

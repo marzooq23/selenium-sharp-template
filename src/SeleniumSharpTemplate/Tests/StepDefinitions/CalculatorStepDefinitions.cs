@@ -1,19 +1,35 @@
 ﻿using SeleniumSharpTemplate.Tests.Pages;
 
-namespace SeleniumSharpTemplate.Tests.StepDefinitions
+namespace SeleniumSharpTemplate.Tests.StepDefinitions;
+
+[Binding]
+public sealed class CalculatorStepDefinitions(
+    ExtentTest extentTest,
+    FeatureContext featureContext,
+    GoogleHomePage googleHomePage,
+    ScenarioContext scenarioContext)
 {
-    [Binding]
-    public sealed class CalculatorStepDefinitions(GoogleHomePage googleHomePage, ExtentTest extentTest)
+    [Given("I launch google calculator")]
+    public void GivenILaunchGoogleCalculator()
     {
-        [Given("I launch google calculator")]
-        public void GivenILaunchGoogleCalculator()
+        const string searchText = "calculator";
+        googleHomePage.GoToGoogle();
+        googleHomePage.Search(searchText);
+
+        try
         {
-            const string searchText = "calculator";
-            googleHomePage.GoToGoogle();
-            googleHomePage.Search(searchText);
             googleHomePage.GetPageTitle.Should().StartWith(searchText);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
             var title = $"Search result '{searchText}' verified";
-            extentTest.LogScreenshot(title, googleHomePage.driver.CaptureScreenshot(title));
+            extentTest.LogScreenshot(
+                title,
+                googleHomePage.CaptureScreenshot(title, Path.Combine(PathFinder.Screenshots, DateTime.Now.ToString("dd-MM-yyyy"), featureContext.FeatureInfo.Title, scenarioContext.ScenarioInfo.Title)).ConvertImageToBase64());
         }
     }
 }

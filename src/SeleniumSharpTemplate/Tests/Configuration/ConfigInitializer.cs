@@ -10,8 +10,8 @@ internal static class ConfigInitializer
         Config? config = ConfigurationFactory
             .GetBinding<Config>(
             Path
-            .Combine(PathFinder.Config, FileAndFolderName.CONFIG_JSON),
-            FileAndFolderName.CONFIG_SECTION);
+            .Combine(PathFinder.Config, PathFinder.CONFIG_JSON),
+            PathFinder.CONFIG_SECTION);
 
         if (config != null)
         {

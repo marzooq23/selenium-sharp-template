@@ -11,7 +11,7 @@ public static class InternetExplorerDriverServiceCreator
         get
         {
             DirectoryInfo driverPath =
-                new($"{Path.Combine(PathFinder.Bin, FileAndFolderName.DRIVER)}");
+                new($"{Path.Combine(PathFinder.Bin, PathFinder.DRIVER)}");
             if (!driverPath.Exists) driverPath.Create();
 
             Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());

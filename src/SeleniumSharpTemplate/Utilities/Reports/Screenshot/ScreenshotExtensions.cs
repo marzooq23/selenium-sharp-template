@@ -5,7 +5,7 @@ namespace SeleniumSharpTemplate.Utilities.Reports.Screenshot;
 
 public static class ScreenshotExtensions
 {
-    public static string CaptureScreenshot(this IWebDriver Driver, string FileName, string? FilePath = null)
+    public static string CaptureScreenshot(this IWebDriver Driver, string FileName, string FilePath)
     {
         string imagePath = string.Empty;
 
@@ -14,7 +14,7 @@ public static class ScreenshotExtensions
             var screenShot = Driver.TakeScreenshot();
             string screenShotFileName = $"{FileName}_{Guid.NewGuid()}.png";
             imagePath = Path.Combine(
-                FilePath! ?? PathFinder.ScenarioTitleScreenshots,
+                FilePath,
                 screenShotFileName);
             screenShot.SaveAsFile(imagePath);
         }
@@ -24,5 +24,17 @@ public static class ScreenshotExtensions
         }
 
         return imagePath;
+    }
+
+    public static string ConvertImageToBase64(this string imagePath)
+    {
+        byte[] imageBytes = File.ReadAllBytes(imagePath);
+
+        if (imageBytes == null || imageBytes.Length == 0)
+        {
+            throw new InvalidOperationException("Image file is empty or could not be read.");
+        }
+
+        return Convert.ToBase64String(imageBytes);
     }
 }

@@ -2,25 +2,16 @@
 
 [Binding]
 [DebuggerStepThrough]
-internal static class ScreenshotInitializer
+internal class ScreenshotInitializer
 {
-    [BeforeFeature]
-    public static void CreateScreenshotsFolderBeforeFeature(FeatureContext featureContext)
-    {
-        PathFinder.FeatureTitleScreenshots =
-            Path.Combine(
-                PathFinder.Screenshots,
-                featureContext.FeatureInfo.Title)
-            .CreatePathIfNotExists();
-    }
-
     [BeforeScenario]
-    public static void CreateScreenshotsFolderBeforeScenario(ScenarioContext scenarioContext)
+    public void CreateScreenshotsFolder(FeatureContext featureContext, ScenarioContext scenarioContext)
     {
-        PathFinder.ScenarioTitleScreenshots =
-            Path.Combine(
-                PathFinder.FeatureTitleScreenshots!,
-                scenarioContext.ScenarioInfo.Title)
-            .CreatePathIfNotExists();
+        Path.Combine(
+            PathFinder.Screenshots,
+            System.DateTime.Now.ToString("dd-MM-yyyy"),
+            featureContext.FeatureInfo.Title,
+            scenarioContext.ScenarioInfo.Title)
+            .CreateFolderIfNotExists();
     }
 }

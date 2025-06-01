@@ -53,6 +53,7 @@
 		<Using Include="OpenQA.Selenium" />
 		<Using Include="SeleniumExtras.WaitHelpers" />
 		<Using Include="Serilog" />
+		<Using Include="System" />
 		<Using Include="System.Diagnostics" />
 		<Using Include="Reqnroll" />
 		<Using Include="Reqnroll.BoDi" />
