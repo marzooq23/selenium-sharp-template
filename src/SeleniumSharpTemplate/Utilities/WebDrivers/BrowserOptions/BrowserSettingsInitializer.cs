@@ -16,8 +16,8 @@ internal static class BrowserSettingsInitializer
             .GetBinding<BrowserSettings>(
                 Path.Combine(
                     PathFinder.BrowserSettings,
-                    FileAndFolderName.BROWSERSETTINGS_JSON),
-                FileAndFolderName.BROWSERSETTINGS_SECTION);
+                    PathFinder.BROWSERSETTINGS_JSON),
+                PathFinder.BROWSERSETTINGS_SECTION);
 
         if (browsersSettings != null)
         {
@@ -50,6 +50,6 @@ internal static class BrowserSettingsInitializer
     public static void KillWebDrivers() =>
         ProcessRunner.RunBatchFile(
             Path.Combine(
-                PathFinder.KillWebDrivers, FileAndFolderName.KILL_WEBDRIVERS_BAT),
+                PathFinder.KillWebDrivers, PathFinder.KILL_WEBDRIVERS_BAT),
             PathFinder.KillWebDrivers);
 }

@@ -9,7 +9,7 @@ internal static class LoggingInitializer
     {
         Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
-                .WriteTo.File(Path.Combine(PathFinder.Logs, FileAndFolderName.LOG_TXT))
+                .WriteTo.File(Path.Combine(PathFinder.Logs, PathFinder.LOG_TXT))
                 .CreateLogger();
     }
 }

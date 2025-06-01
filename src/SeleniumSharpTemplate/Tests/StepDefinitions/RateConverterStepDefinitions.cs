@@ -1,18 +1,35 @@
 ﻿using SeleniumSharpTemplate.Tests.Pages;
 
-namespace SeleniumSharpTemplate.Tests.StepDefinitions
+namespace SeleniumSharpTemplate.Tests.StepDefinitions;
+
+[Binding]
+public sealed class RateConverterStepDefinitions(
+    GoogleHomePage googleHomePage,
+    ExtentTest extentTest,
+    FeatureContext featureContext,
+    ScenarioContext scenarioContext)
 {
-    [Binding]
-    public sealed class RateConverterStepDefinitions(GoogleHomePage googleHomePage)
+    [Given("I launch google rate converter")]
+    public void GivenILaunchGoogleRateConverter()
     {
-        [Given("I launch google rate converter")]
-        public void GivenILaunchGoogleRateConverter()
+        const string searchText = "usd to inr converter";
+        googleHomePage.GoToGoogle();
+        googleHomePage.Search(searchText);
+
+        try
         {
-            const string searchText = "usd to inr converter";
-            googleHomePage.GoToGoogle();
-            googleHomePage.Search(searchText);
             googleHomePage.GetPageTitle.Should().StartWith(searchText);
-            googleHomePage.driver.CaptureScreenshot($"Search result '{searchText}' verified");
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            var title = $"Search result '{searchText}' verified";
+            extentTest.LogScreenshot(
+                title,
+                googleHomePage.CaptureScreenshot(title, Path.Combine(PathFinder.Screenshots, DateTime.Now.ToString("dd-MM-yyyy"), featureContext.FeatureInfo.Title, scenarioContext.ScenarioInfo.Title)).ConvertImageToBase64());
         }
     }
 }

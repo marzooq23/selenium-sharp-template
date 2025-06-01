@@ -34,4 +34,9 @@ public class BasePage(IWebDriver driver)
             throw;
         }
     }
+
+    public string CaptureScreenshot(string FileName, string? FilePath = null)
+    {
+        return driver.CaptureScreenshot(FileName, FilePath!);
+    }
 }
