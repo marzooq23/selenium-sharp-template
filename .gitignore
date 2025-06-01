@@ -432,3 +432,7 @@ obj/
 #Feature Files
 *.feature.cs
 *.feature.xlsx.*
+
+### Artefacts ###
+/Artefacts/**/*
+/**/*/Logs/
