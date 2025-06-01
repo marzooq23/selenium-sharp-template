@@ -64,12 +64,15 @@ public class ExtentHtmlReporterFive
             case ScenarioBlock.Given:
                 CreateNode<Given>(driver, featureContext, scenarioContext, stepText);
                 break;
+
             case ScenarioBlock.When:
                 CreateNode<When>(driver, featureContext, scenarioContext, stepText);
                 break;
+
             case ScenarioBlock.Then:
                 CreateNode<Then>(driver, featureContext, scenarioContext, stepText);
                 break;
+
             default:
                 CreateNode<And>(driver, featureContext, scenarioContext, stepText);
                 break;
