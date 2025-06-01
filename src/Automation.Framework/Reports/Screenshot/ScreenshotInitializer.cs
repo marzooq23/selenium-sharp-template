@@ -13,7 +13,8 @@ internal class ScreenshotInitializer
             PathFinder.Screenshots,
             DateTimeFormatter.NOW_DD_MM_YYYY,
             featureContext.FeatureInfo.Title,
-            scenarioContext.ScenarioInfo.Title)
+            scenarioContext.ScenarioInfo.Title,
+            Guid.NewGuid().ToString())
             .CreateFolderIfNotExists();
     }
 }

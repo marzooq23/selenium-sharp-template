@@ -2,5 +2,6 @@
 
 public class Config
 {
-    public string UrlGoogle { get; set; } = null!;
+    public string UrlParaBank { get; set; } = null!;
+    public string UrlParaBankRegister { get; set; } = null!;
 }
