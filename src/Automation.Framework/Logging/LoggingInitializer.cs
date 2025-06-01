@@ -1,7 +1,7 @@
 ﻿namespace Automation.Framework.Logging;
 
 [Binding]
-//[DebuggerStepThrough]
+[DebuggerStepThrough]
 internal static class LoggingInitializer
 {
     [BeforeTestRun]

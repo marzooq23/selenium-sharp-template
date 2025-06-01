@@ -1,4 +1,5 @@
-﻿using AventStack.ExtentReports.Gherkin.Model;
+﻿using Automation.Framework.DateTime;
+using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports.Reporter.Config;
 
@@ -102,7 +103,7 @@ public class ExtentHtmlReporterFive
 
         string screenshotPath = Path.Combine(
             PathFinder.Screenshots,
-            System.DateTime.Now.ToString("dd-MM-yyyy"),
+            DateTimeFormatter.NOW_DD_MM_YYYY,
             featureContext.FeatureInfo.Title,
             scenarioContext.ScenarioInfo.Title);
 

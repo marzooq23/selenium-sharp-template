@@ -12,10 +12,12 @@ public static class ScreenshotExtensions
         try
         {
             var screenShot = Driver.TakeScreenshot();
+
             string screenShotFileName = $"{FileName}_{Guid.NewGuid()}.png";
             imagePath = Path.Combine(
                 FilePath,
                 screenShotFileName);
+
             screenShot.SaveAsFile(imagePath);
         }
         catch (Exception e)

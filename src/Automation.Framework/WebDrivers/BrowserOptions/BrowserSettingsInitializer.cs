@@ -56,7 +56,8 @@ internal static class BrowserSettingsInitializer
     {
         ProcessRunner.RunBatchFile(
             Path.Combine(
-                PathFinder.KillWebDrivers, PathFinder.KILL_WEBDRIVERS_BAT),
+                PathFinder.KillWebDrivers,
+                PathFinder.KILL_WEBDRIVERS_BAT),
             PathFinder.KillWebDrivers);
     }
 }

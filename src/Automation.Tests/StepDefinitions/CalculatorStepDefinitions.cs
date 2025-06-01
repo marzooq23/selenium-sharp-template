@@ -1,4 +1,5 @@
-﻿using Automation.Tests.Pages;
+﻿using Automation.Framework.DateTime;
+using Automation.Tests.Pages;
 
 namespace Automation.Tests.StepDefinitions;
 
@@ -29,7 +30,7 @@ public sealed class CalculatorStepDefinitions(
             var title = $"Search result '{searchText}' verified";
             extentTest.LogScreenshot(
                 title,
-                googleHomePage.CaptureScreenshot(title, Path.Combine(PathFinder.Screenshots, DateTime.Now.ToString("dd-MM-yyyy"), featureContext.FeatureInfo.Title, scenarioContext.ScenarioInfo.Title)).ConvertImageToBase64());
+                googleHomePage.CaptureScreenshot(title, Path.Combine(PathFinder.Screenshots, DateTimeFormatter.NOW_DD_MM_YYYY, featureContext.FeatureInfo.Title, scenarioContext.ScenarioInfo.Title)).ConvertImageToBase64());
         }
     }
 }

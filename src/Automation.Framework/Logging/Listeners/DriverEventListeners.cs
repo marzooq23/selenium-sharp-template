@@ -8,7 +8,13 @@ public static class DriverEventListeners
 {
     private const string PASSWORD_MASK = "********";
 
-    private static string EVENT => DateTimeFormatter.NOW_YYYY_MM_DD_HH_MM_SS_UTC + " [EVENT]";
+    private static string EVENT
+    {
+        get
+        {
+            return DateTimeFormatter.NOW_YYYY_MM_DD_HH_MM_SS_UTC + " [EVENT]";
+        }
+    }
 
     private static readonly Dictionary<IWebElement, string> WebElementNames = [];
 

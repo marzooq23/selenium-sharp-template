@@ -1,4 +1,6 @@
-﻿namespace Automation.Framework.Reports.Screenshot;
+﻿using Automation.Framework.DateTime;
+
+namespace Automation.Framework.Reports.Screenshot;
 
 [Binding]
 [DebuggerStepThrough]
@@ -9,7 +11,7 @@ internal class ScreenshotInitializer
     {
         Path.Combine(
             PathFinder.Screenshots,
-            System.DateTime.Now.ToString("dd-MM-yyyy"),
+            DateTimeFormatter.NOW_DD_MM_YYYY,
             featureContext.FeatureInfo.Title,
             scenarioContext.ScenarioInfo.Title)
             .CreateFolderIfNotExists();

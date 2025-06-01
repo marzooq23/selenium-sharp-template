@@ -1,18 +1,29 @@
 ﻿using Automation.Framework.Exceptions;
 using Automation.Framework.WebDrivers.Enum;
 using Automation.Framework.WebDrivers.EventFiring;
-using Selenium.SelfHealing;
 using Automation.Framework.WebDrivers.Initializer.Chrome;
 using Automation.Framework.WebDrivers.Initializer.Edge;
 using Automation.Framework.WebDrivers.Initializer.Firefox;
 using Automation.Framework.WebDrivers.Initializer.InternetExplorer;
+using Selenium.SelfHealing;
 
 namespace Automation.Framework.WebDrivers.Factory;
 
 public static class WebDriverFactory
 {
+    private const string SE_CACHE_PATH = "SE_CACHE_PATH";
+
     public static IWebDriver CreateWebDriver(BrowserType browserType, DriverType driverType)
     {
+        DirectoryInfo driverPath = new(Path.Combine(PathFinder.Bin, PathFinder.DRIVER));
+
+        if (!driverPath.Exists)
+        {
+            driverPath.Create();
+        }
+
+        Environment.SetEnvironmentVariable(SE_CACHE_PATH, driverPath.ToString());
+
         IWebDriver driver = browserType switch
         {
             BrowserType.Chrome => new ChromeWebDriverInitializer().InitializeDriver(),
