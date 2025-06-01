@@ -89,6 +89,7 @@ StyleCopReport.xml
 *.tlh
 *.tmp_proj
 *_wpftmp.csproj
+*.log
 *.tlog
 *.vspscc
 *.vssscc
@@ -433,3 +434,4 @@ obj/
 *.feature.xlsx.*
 
 ### Artefacts ###
+/Artefacts/**/*
