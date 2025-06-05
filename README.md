@@ -40,7 +40,7 @@ This is a C#-based Selenium test automation template designed to simplify and st
 - [Tour of C#](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
 - [Git --fast-version-control](https://git-scm.com/doc)
 - [The Selenium Browser Automation Project](https://www.selenium.dev/documentation/)
-- [Welcome to the Step-By-Step Getting Started Guide! for Specflow](https://docs.specflow.org/projects/getting-started/en/latest/index.html)
+- [Quick start reqnroll](https://docs.reqnroll.net/latest/quickstart/index.html)
 - [Serilog - Configuration Basics](https://github.com/serilog/serilog/wiki/Configuration-Basics)
 
     
