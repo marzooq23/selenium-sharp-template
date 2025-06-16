@@ -1,4 +1,6 @@
-﻿namespace Automation.Framework.Paths;
+﻿using Automation.Framework.DateTime;
+
+namespace Automation.Framework.Paths;
 
 public static class PathFinder
 {
@@ -79,8 +81,7 @@ public static class PathFinder
     {
         get
         {
-            return Path.Combine(Root, ARTEFACTS_FOLDER_NAME)
-        .CreateFolderIfNotExists();
+            return Path.Combine(Root, ARTEFACTS_FOLDER_NAME).CreateFolderIfNotExists();
         }
     }
 
@@ -88,8 +89,7 @@ public static class PathFinder
     {
         get
         {
-            return Path.Combine(Artefacts, REPORTS_FOLDER_NAME)
-        .CreateFolderIfNotExists();
+            return Path.Combine(Artefacts, REPORTS_FOLDER_NAME).CreateFolderIfNotExists();
         }
     }
 
@@ -97,8 +97,7 @@ public static class PathFinder
     {
         get
         {
-            return Path.Combine(Reports, SCREENSHOTS_FOLDER_NAME)
-        .CreateFolderIfNotExists();
+            return Path.Combine(Reports, SCREENSHOTS_FOLDER_NAME).CreateFolderIfNotExists();
         }
     }
 
@@ -106,8 +105,15 @@ public static class PathFinder
     {
         get
         {
-            return Path.Combine(Reports, PDF_FOLDER_NAME)
-        .CreateFolderIfNotExists();
+            return Path.Combine(Reports, PDF_FOLDER_NAME).CreateFolderIfNotExists();
+        }
+    }
+
+    public static string PdfToday
+    {
+        get
+        {
+            return Path.Combine(Pdf, DateTimeFormatter.NOW_DD_MM_YYYY);
         }
     }
 
@@ -115,8 +121,7 @@ public static class PathFinder
     {
         get
         {
-            return Path.Combine(Reports, EXTENT_REPORTS_FOLDER_NAME)
-        .CreateFolderIfNotExists();
+            return Path.Combine(Reports, EXTENT_REPORTS_FOLDER_NAME).CreateFolderIfNotExists();
         }
     }
 }
