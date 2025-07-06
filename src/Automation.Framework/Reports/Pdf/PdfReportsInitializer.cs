@@ -1,17 +1,18 @@
-﻿using Automation.Framework.DateTime;
-
-namespace Automation.Framework.Reports.Pdf;
+﻿namespace Automation.Framework.Reports.Pdf;
 
 [Binding]
 [DebuggerStepThrough]
 internal class PdfReportsInitializer
 {
     [BeforeScenario]
-    public void CreatePdfFolder(FeatureContext featureContext, ScenarioContext scenarioContext)
+    public void CreatePdfFolder()
     {
-        Path.Combine(
-            PathFinder.Pdf,
-            DateTimeFormatter.NOW_DD_MM_YYYY)
-            .CreateFolderIfNotExists();
+        PathFinder.PdfToday.CreateFolderIfNotExists();
+    }
+
+    [AfterTestRun(Order = 1)]
+    public static void GeneratePdfReport()
+    {
+        PdfReportGenerator.GenerateReport(PathFinder.PdfToday);
     }
 }

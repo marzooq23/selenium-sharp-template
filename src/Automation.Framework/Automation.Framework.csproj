@@ -7,6 +7,7 @@
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
 		<LangVersion>latest</LangVersion>
+		<Configurations>Debug;Release;Dev;Test;Uat;Staging</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -24,6 +25,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="nunit" Version="4.3.2" />
+		<PackageReference Include="PDFsharp-MigraDoc" Version="6.2.0" />
 		<PackageReference Include="Reqnroll" Version="2.4.1" />
 		<PackageReference Include="Reqnroll.NUnit" Version="2.4.1" />
 		<PackageReference Include="Roslynator.Analyzers" Version="4.13.1">
