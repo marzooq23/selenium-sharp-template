@@ -1,12 +1,11 @@
-# selenium-sharp-template
+# se-sharp-template
 
 This is a C#-based Selenium test automation template designed to simplify and streamline automated testing for web applications. The framework is structured to promote maintainability, scalability, and ease of use.
 
 
 ## Architecture
 
-![Architecture](https://github.com/user-attachments/assets/fb61ba74-c478-4ca5-87bb-ab26a020be53)
-
+![Architecture](src/assets/architecture-diagram.svg)
 
 ## Features
 
@@ -60,5 +59,4 @@ Please adhere to this project's [CODE_OF_CONDUCT](.github/CODE_OF_CONDUCT.md).
 
 ## Support
 
-For support, email mohamedmarzooq23@gmail.com or via discord @marzooq23.
-
+For support, email mohamedmarzooq23@gmail.com or via [discord](https://discord.com/users/1026893288902504508).
