@@ -61,4 +61,4 @@ Please adhere to this project's [CODE_OF_CONDUCT](.github/CODE_OF_CONDUCT.md).
 
 For support, email mohamedmarzooq23@gmail.com or via discord.
 
-[![Discord Presence](https://lanyard.cnrad.dev/api/1026893288902504508?theme=dark&bg=809ecf&animated=false&hideDiscrim=true&borderRadius=30px&idleMessage=Probably%20doing%20something%20else...)](https://discord.com/users/1026893288902504508)
+[![Discord Presence](https://lanyard.cnrad.dev/api/1026893288902504508)](https://discord.com/users/1026893288902504508)
