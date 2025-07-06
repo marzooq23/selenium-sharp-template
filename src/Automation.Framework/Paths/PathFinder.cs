@@ -11,6 +11,7 @@ public static class PathFinder
     public const string CONFIG_SECTION = "Config";
     public const string LOGS_FOLDER_NAME = "Logs";
     public const string CONFIG_JSON = "Config.json";
+    public const string FONTS = "C:\\Windows\\Fonts\\";
     public const string REPORTS_FOLDER_NAME = "Reports";
     public const string EXECUTORS_DIRECTORY = "Executors";
     public const string CONFIG_DIRECTORY = "Configuration";
@@ -122,14 +123,6 @@ public static class PathFinder
         get
         {
             return Path.Combine(Reports, EXTENT_REPORTS_FOLDER_NAME).CreateFolderIfNotExists();
-        }
-    }
-
-    public static string Fonts
-    {
-        get
-        {
-            return "C:\\Windows\\Fonts\\";
         }
     }
 }

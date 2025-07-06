@@ -8,10 +8,10 @@ public class FontResolver : IFontResolver
     {
         return faceName switch
         {
-            Fonts.CourierNewRegular => File.ReadAllBytes($"{PathFinder.Fonts}\\cour.ttf"),
-            Fonts.CourierNewBold => File.ReadAllBytes($"{PathFinder.Fonts}\\courbd.ttf"),
-            Fonts.CourierNewItalic => File.ReadAllBytes($"{PathFinder.Fonts}\\couri.ttf"),
-            Fonts.CourierNewBoldItalic => File.ReadAllBytes($"{PathFinder.Fonts}\\courbi.ttf"),
+            Fonts.CourierNewRegular => File.ReadAllBytes($"{PathFinder.FONTS}\\cour.ttf"),
+            Fonts.CourierNewBold => File.ReadAllBytes($"{PathFinder.FONTS}\\courbd.ttf"),
+            Fonts.CourierNewItalic => File.ReadAllBytes($"{PathFinder.FONTS}\\couri.ttf"),
+            Fonts.CourierNewBoldItalic => File.ReadAllBytes($"{PathFinder.FONTS}\\courbi.ttf"),
             _ => throw new InvalidOperationException($"Font face '{faceName}' not handled.")
         };
     }
