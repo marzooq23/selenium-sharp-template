@@ -4,24 +4,32 @@ namespace Automation.Framework.Reports.Fonts;
 
 public class FontResolver : IFontResolver
 {
-    private static readonly string CourierNewPath = @"C:\Windows\Fonts\cour.ttf";
-
     public byte[] GetFont(string faceName)
     {
-        if (faceName == "CourierNew#")
-            return File.ReadAllBytes(CourierNewPath);
-
-        throw new InvalidOperationException($"Font {faceName} not handled.");
+        return faceName switch
+        {
+            Fonts.CourierNewRegular => File.ReadAllBytes($"{PathFinder.Fonts}\\cour.ttf"),
+            Fonts.CourierNewBold => File.ReadAllBytes($"{PathFinder.Fonts}\\courbd.ttf"),
+            Fonts.CourierNewItalic => File.ReadAllBytes($"{PathFinder.Fonts}\\couri.ttf"),
+            Fonts.CourierNewBoldItalic => File.ReadAllBytes($"{PathFinder.Fonts}\\courbi.ttf"),
+            _ => throw new InvalidOperationException($"Font face '{faceName}' not handled.")
+        };
     }
 
     public FontResolverInfo ResolveTypeface(string familyName, bool isBold, bool isItalic)
     {
         if (familyName.Equals("Courier New", StringComparison.OrdinalIgnoreCase))
         {
-            return new FontResolverInfo("CourierNew#");
+            if (isBold && isItalic)
+                return new FontResolverInfo(Fonts.CourierNewBoldItalic);
+            if (isBold)
+                return new FontResolverInfo(Fonts.CourierNewBold);
+            if (isItalic)
+                return new FontResolverInfo(Fonts.CourierNewItalic);
+
+            return new FontResolverInfo(Fonts.CourierNewRegular);
         }
 
-        // Fallback font
-        return new FontResolverInfo("CourierNew#");
+        return new FontResolverInfo(Fonts.CourierNewRegular);
     }
 }

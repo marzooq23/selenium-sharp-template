@@ -124,4 +124,12 @@ public static class PathFinder
             return Path.Combine(Reports, EXTENT_REPORTS_FOLDER_NAME).CreateFolderIfNotExists();
         }
     }
+
+    public static string Fonts
+    {
+        get
+        {
+            return "C:\\Windows\\Fonts\\";
+        }
+    }
 }

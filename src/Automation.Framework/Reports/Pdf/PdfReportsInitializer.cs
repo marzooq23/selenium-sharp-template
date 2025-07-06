@@ -10,12 +10,9 @@ internal class PdfReportsInitializer
         PathFinder.PdfToday.CreateFolderIfNotExists();
     }
 
-    [AfterScenario]
-    public void GeneratePdfReport(ScenarioContext scenarioContext)
+    [AfterTestRun(Order = 1)]
+    public static void GeneratePdfReport()
     {
-        var pdfReportGenerator = new PdfReportGenerator();
-        pdfReportGenerator.GenerateReport(
-            PathFinder.PdfToday,
-            scenarioContext.ScenarioInfo.Title);
+        PdfReportGenerator.GenerateReport(PathFinder.PdfToday);
     }
 }

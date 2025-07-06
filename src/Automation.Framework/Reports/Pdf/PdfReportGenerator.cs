@@ -1,4 +1,8 @@
-﻿using Automation.Framework.Reports.Fonts;
+﻿using System.Runtime.InteropServices;
+using Automation.Framework.DateTime;
+using Automation.Framework.Logging.Event;
+using Automation.Framework.Reports.Fonts;
+using Automation.Framework.WebDrivers.Enum;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Fields;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
@@ -12,9 +16,9 @@ using Table = MigraDoc.DocumentObjectModel.Tables.Table;
 
 namespace Automation.Framework.Reports.Pdf;
 
-public class PdfReportGenerator
+public static class PdfReportGenerator
 {
-    public PdfReportGenerator()
+    static PdfReportGenerator()
     {
         GlobalFontSettings.FontResolver ??= new FontResolver();
     }
@@ -35,8 +39,8 @@ public class PdfReportGenerator
 
         var section = document.AddSection();
 
-        DrawTable(document); // Add the test summary table
-        AddTestResultPieChart(section, total: 10, passed: 8, failed: 1, skipped: 1); // Add chart after table
+        DrawTable(document);
+        AddTestResultPieChart(section, TestEventsLogger.TotalTests, TestEventsLogger.TotalPassedTests, TestEventsLogger.TotalFailedTests, TestEventsLogger.TotalSkippedTests, TestEventsLogger.TotalInconclusiveTests);
 
         var paragraph = section.AddParagraph();
 
@@ -49,15 +53,15 @@ public class PdfReportGenerator
         return document;
     }
 
-    public void GenerateReport(string filePath, string title)
+    public static void GenerateReport(string filePath)
     {
         var pdfReportModel = new PdfReportModel
         {
-            Title = title,
+            Title = "Test Execution Results Pdf Report",
             Subject = "Generated PDF Report",
             Author = "Automation Framework",
             FontColor = Colors.DarkBlue,
-            FooterFormat = new DateField { Format = "yyyy/MM/dd HH:mm:ss" },
+            FooterFormat = new DateField { Format = $"{DateTimeFormatter.FORMAT_DD_MM_YYYY} {DateTimeFormatter.FORMAT_H_MM_SS_TT}" },
             FooterAlignment = ParagraphAlignment.Center
         };
 
@@ -81,10 +85,7 @@ public class PdfReportGenerator
 
         pdfRenderer.RenderDocument();
 
-        string imagePath = @"C:\Users\jirai\source\repos\selenium-sharp-template\Artefacts\Reports\Screenshots\05-06-2025\Menu\Launch about us from menu\user clicks on About Us from menu_adbd5414-df10-4e5c-866f-6325a7b4906e.png";
-        document.LastSection.AddImage(imagePath);
-
-        var filename = Path.Combine(filePath, $"{title}_{Guid.NewGuid()}.pdf");
+        var filename = Path.Combine(filePath, $"Test Execution Results Pdf Report_{Guid.NewGuid()}.pdf");
         pdfRenderer.PdfDocument.Save(filename);
 
         PdfFileUtility.ShowDocument(filename);
@@ -108,14 +109,14 @@ public class PdfReportGenerator
 
         var data = new (string Label, string Value)[]
         {
-            ("Test Suite", "LoginTests"),
-            ("Environment", "QA"),
-            ("Platform", "Windows 11"),
-            ("Browser", "Chrome 124"),
+            ("Test Suite", "Para Bank"),
+            ("Environment", ConfigurationFactory.GetCurrentConfig),
+            ("Platform", RuntimeInformation.OSDescription),
+            ("Browser", nameof(BrowserType.Edge)),
             ("Executed By", "CI Pipeline"),
-            ("Start Time", "2025-06-16 09:00"),
-            ("End Time", "2025-06-16 09:05"),
-            ("Duration", "00:05:00"),
+            ("Start Time", TestEventsLogger.TestExecutionStartTime),
+            ("End Time", TestEventsLogger.TestExecutionEndTime),
+            ("Duration", TestEventsLogger.TestExecutionDurationTime),
             ("Build ID", "v1.2.3")
         };
 
@@ -147,7 +148,7 @@ public class PdfReportGenerator
         document.LastSection.AddParagraph().Format.SpaceBefore = 20;
     }
 
-    private static void AddTestResultPieChart(Section section, int total, int passed, int failed, int skipped)
+    private static void AddTestResultPieChart(Section section, int total, int passed, int failed, int skipped, int inconclusive)
     {
         var chart = section.AddChart(ChartType.Pie2D);
         chart.LineFormat.Width = 0;
@@ -164,24 +165,44 @@ public class PdfReportGenerator
         series.DataLabel.Position = DataLabelPosition.OutsideEnd;
         series.DataLabel.Font.Size = 12;
         series.DataLabel.Font.Bold = true;
+        series.DataLabel.Font.Name = "Arial";
 
-        // Add pie values and color
-        series.Add(passed).FillFormat.Color = new Color(0, 128, 96);
-        series.Add(failed).FillFormat.Color = new Color(192, 0, 32);
-        series.Add(skipped).FillFormat.Color = new Color(64, 105, 225);
+        var xLabels = new List<string>();
 
-        // Manual labels with count in legend
+        if (passed > 0)
+        {
+            series.Add(passed).FillFormat.Color = new Color(0, 128, 96);
+            xLabels.Add($"Passed ({passed})");
+        }
+
+        if (failed > 0)
+        {
+            series.Add(failed).FillFormat.Color = new Color(192, 0, 32);
+            xLabels.Add($"Failed ({failed})");
+        }
+
+        if (skipped > 0)
+        {
+            series.Add(skipped).FillFormat.Color = new Color(64, 105, 225);
+            xLabels.Add($"Skipped ({skipped})");
+        }
+
+        if (inconclusive > 0)
+        {
+            series.Add(inconclusive).FillFormat.Color = new Color(128, 128, 128);
+            xLabels.Add($"Inconclusive ({inconclusive})");
+        }
+
         var xSeries = chart.XValues.AddXSeries();
-        xSeries.Add(
-            $"Passed  ({passed})",
-            $"Failed  ({failed})",
-            $"Skipped ({skipped})"
-        );
+        foreach (var label in xLabels)
+        {
+            xSeries.Add(label);
+        }
 
-        // Legend formatting
         var legend = chart.RightArea.AddLegend();
         legend.LineFormat.Width = 0;
         legend.Format.Alignment = ParagraphAlignment.Left;
         legend.Format.Font.Size = 12;
+        legend.Format.Font.Name = "Arial";
     }
 }
